@@ -1,0 +1,439 @@
+{
+  "_comment": "Shared evaluation settings for the three-approach backtest (Deterministic, Agentic Workflow represented by JEV, Agentic Causal RAG) and its within-approach Agent Committee variant. Evaluation settings only: no system's forecasting or allocation logic is set here. Paths are relative to the repository root.",
+  "version": "1.9",
+  "created": "2026-10-28",
+  "inherits_stage2_run_spec": {
+    "path": "stage2/scoring/stage2_run_spec_dev_v4.json",
+    "use_keys": [
+      "prices",
+      "dtb4wk"
+    ],
+    "note": "SPY/IEF/LQD price segments and DTB4WK are taken unchanged from the verified Stage 2 run spec (freeze gate 5 and the FRED check apply to them)."
+  },
+  "extra_prices": {
+    "TLT": {
+      "segments": [
+        {
+          "path": "stage2/data/_pinned/market_price_TLT_pre2018.csv",
+          "end_exclusive": "2018-01-02",
+          "scale": 0.9385200780329516,
+          "allow_close_as_adjusted": true,
+          "close_is_adjusted_evidence": "Close is the distribution-adjusted series (TLT 2018-01-02 Open 126.49 vs Close 97.18). Scale = ratio of the two sources' closes on 2018-01-02, the same rule that reproduces the SPY/IEF/LQD scales exactly. Issuer distribution check for TLT is pending (gate D-TLT).",
+          "expected_sha256": "25cf446d0b7278af496ac463684f390ccaa3ab22621e74e9bf587658730687bd"
+        },
+        {
+          "path": "stage2/data/_pinned/market_price_TLT_2018plus.tsv",
+          "start_inclusive": "2018-01-02",
+          "allow_close_as_adjusted": true,
+          "close_is_adjusted_evidence": "Same source and commit as SPY/IEF/LQD 2018+.",
+          "expected_sha256": "fdecb0c33c3209f6fe033e3541da1c15feda7e16b2f9c9305607263bb0b3e52e"
+        }
+      ]
+    }
+  },
+  "calendar_assets": [
+    "SPY",
+    "IEF",
+    "LQD",
+    "TLT"
+  ],
+  "timing": {
+    "decision_time_et": "20:00",
+    "decision_day": "last common trading day of the calendar month",
+    "execution": "close of the first common trading day after month-end",
+    "holding": "to the close of the first common trading day after the next month-end",
+    "cash": "DTB4WK quote at entry accrued over exact calendar days (Stage 2 rule)"
+  },
+  "costs": {
+    "cost_per_dollar_traded": 0.0005,
+    "start_from": "cash",
+    "drift_aware": true
+  },
+  "metrics": {
+    "cer_delta": 2.5,
+    "bootstrap_block_months": 6,
+    "bootstrap_reps": 5000,
+    "bootstrap_seed": 20261027,
+    "multiplicity": "Holm"
+  },
+  "windows": {
+    "development": [
+      "2019-03",
+      "2022-12"
+    ],
+    "extended_development_note": "Native-fidelity diagnostic only: AP2 saved runs before the research timeline (2011-01..2015-01) are used solely to check the native-to-common execution attribution. They are not part of the primary research timeline or dashboard.",
+    "protected": [
+      "2023-01",
+      "2026-08"
+    ],
+    "post_window_bridge_from": "2026-09",
+    "extended_development_ap2": [
+      "2011-01",
+      "2022-12"
+    ],
+    "research_timeline_start": "2015-02",
+    "research_timeline_note": "The primary research timeline begins with the February 2015 macro-data training period.",
+    "historical_test": {
+      "sealed": [
+        "2023-01",
+        "2026-08"
+      ],
+      "primary": [
+        "2024-01",
+        "2026-08"
+      ],
+      "secondary": [
+        "2023-01",
+        "2023-12"
+      ],
+      "decided": "2026-10-28 by the project lead",
+      "rule": "The whole window 2023-01..2026-08 stays sealed until a signed GO record exists (framework/lock.py, protected start 2023-01, unchanged). The confirmatory primary analysis uses decision months 2024-01..2026-08 (32 months). 2023 is reported separately as a secondary historical period because it overlaps the AI models' training data; it never enters the primary family and its results are labelled secondary."
+    }
+  },
+  "systems": {
+    "AP1": {
+      "name": "Deterministic Quantitative Model (Stage 2 System A) — primary",
+      "universe": [
+        "SPY",
+        "IEF",
+        "LQD"
+      ],
+      "native_neutral_weights": {
+        "SPY": 0.45,
+        "IEF": 0.35,
+        "LQD": 0.2
+      },
+      "role": "primary"
+    },
+    "AP2A": {
+      "name": "Agentic Workflow — Agent Committee (native gpt-4o, saved runs) — within-approach variant",
+      "universe": [
+        "SPY",
+        "TLT"
+      ],
+      "native_neutral_weights": {
+        "SPY": 0.6,
+        "TLT": 0.4
+      },
+      "role": "within_approach_variant"
+    },
+    "AP2B": {
+      "name": "Agentic Workflow — JEV (native saved answers) — primary representative of the Agentic Workflow",
+      "universe": [
+        "SPY",
+        "TLT"
+      ],
+      "native_neutral_weights": {
+        "SPY": 0.6,
+        "TLT": 0.4
+      },
+      "role": "primary"
+    },
+    "AP3": {
+      "name": "Agentic Causal RAG — primary; awaiting validation, results unavailable",
+      "universe": [
+        "SPY",
+        "IEF",
+        "LQD"
+      ],
+      "native_neutral_weights": {
+        "SPY": 0.45,
+        "IEF": 0.35,
+        "LQD": 0.2
+      },
+      "role": "primary"
+    }
+  },
+  "primary_contrasts": [
+    [
+      "AP2B",
+      "AP1"
+    ],
+    [
+      "AP3",
+      "AP1"
+    ],
+    [
+      "AP3",
+      "AP2B"
+    ]
+  ],
+  "primary_contrasts_note": "Primary family: all pairwise net-CER contrasts among the three primary approaches, Holm-corrected as one family of three, computed on the primary historical period 2024-01..2026-08. The same contrasts for 2023 are reported separately as secondary. Contrasts involving AP3 are computed only once AP3 has genuine decisions.",
+  "pinned_price_validity": {
+    "scorable_from_decision_month": "2011-01",
+    "finding_2026-10-28": "The pre-2018 pinned segment (jeremy111004 @ bdb8ef9c) omits distributions before December 2010: compared with the native Yahoo-adjusted monthly returns, SPY is about 2%/yr and TLT about 4.4%/yr lower in 2005-2010 (roughly their dividend yields), e.g. SPY -0.58% in the Aug and Nov 2010 ex-dividend months; from decision month 2011-01 the sources agree within 0.05% per month. Stage 2 never used months before 2015 for targets or 2016 for covariance, so Stage 2 results are unaffected.",
+    "rule": "The shared evaluator refuses to score decision months before 2011-01."
+  },
+  "research_design": {
+    "updated": "2026-10-29",
+    "primary_approaches": [
+      {
+        "approach": "Deterministic Quantitative Model",
+        "system": "AP1"
+      },
+      {
+        "approach": "Agentic Workflow",
+        "system": "AP2B",
+        "representative": "JEV"
+      },
+      {
+        "approach": "Agentic Causal RAG",
+        "system": "AP3"
+      }
+    ],
+    "within_approach_experiments": {
+      "rule": "Secondary experiments, reported per approach. None enters the primary Holm family.",
+      "status_classes": {
+        "tested": "implemented and tested",
+        "awaiting_validation": "implemented, awaiting validation",
+        "planned": "planned, not yet implemented",
+        "blocked": "blocked by an external dependency",
+        "paused": "implemented, on hold by recorded team decision; resuming needs a new decision"
+      },
+      "groups": [
+        {
+          "approach": "Deterministic Quantitative Model",
+          "base": {
+            "id": "AP1",
+            "name": "Base model: 8 macro surprises",
+            "status": "tested"
+          },
+          "variants": [
+            {
+              "id": "AP1+B1..B5",
+              "name": "Add one financial signal at a time",
+              "status": "tested",
+              "note": "Resumed by the project lead's written decision of 2026-10-29 and pre-registered (config/within_approach_preregistration_v1.json) before any result was reported; the three pause conditions were met. The frozen Stage 2 scorer was re-run from the canonical development spec into stage2/results/dev_rerun_v5_within_approach_2026-10-29 and reproduces the archived 2026-10-27 run file-for-file. Development only. No component improves forecasts significantly after Holm correction within the five-component family.",
+              "results": "native_backtest/out/within_approach/within_approach_v1.json"
+            },
+            {
+              "id": "AP1+B-All",
+              "name": "All five financial signals together",
+              "status": "tested",
+              "note": "The predeclared confirmatory conventional contrast. Normalised pooled squared-error improvement vs A is negative (-0.046, 95% -0.139..+0.001, p 0.47): no improvement. Development only.",
+              "results": "native_backtest/out/within_approach/within_approach_v1.json"
+            },
+            {
+              "id": "REG",
+              "name": "Market regimes",
+              "status": "tested",
+              "note": "Pre-registered 2026-10-29 with both splits fixed in advance: a date split and VIX >= 20 at the decision close, both known at the decision time. Diagnostic only; never used to select or tune anything.",
+              "results": "native_backtest/out/within_approach/within_approach_v1.json"
+            }
+          ]
+        },
+        {
+          "approach": "Agentic Workflow",
+          "base": {
+            "id": "AP2B",
+            "name": "JEV only (primary system)",
+            "status": "tested"
+          },
+          "variants": [
+            {
+              "id": "AP2A",
+              "name": "Agent Committee only",
+              "status": "tested",
+              "note": "272 saved native runs reproduced; development diagnostics; compared only with JEV."
+            },
+            {
+              "id": "AP2-COMBO",
+              "name": "Committee + JEV",
+              "status": "tested",
+              "note": "Equal-weight average of the Committee's and JEV's saved SPY target weights, with no parameters; the rule was pre-registered. Same dates, universe and horizon, with information cutoffs before the decision, so no look-ahead. It lies between its components and differs from neither significantly.",
+              "results": "native_backtest/out/within_approach/within_approach_v1.json"
+            }
+          ]
+        },
+        {
+          "approach": "Agentic Causal RAG",
+          "base": {
+            "id": "AP3",
+            "name": "Agentic Causal RAG (primary version chosen before the protected window opens)",
+            "status": "awaiting_validation",
+            "blocked_by": [
+              "free real-model run (Qwen3 4B, Kaggle)",
+              "choice of primary version"
+            ]
+          },
+          "variants": [
+            {
+              "id": "AP3-RE",
+              "name": "Causal RAG — Reduced Evidence",
+              "status": "exploratory",
+              "note": "Executed: all 95 agent months run with genuine qwen3:4b outputs on a free GPU (documented substitution for Llama 3.1 70B), and the 46 development months carried through the native pipeline. Both pre-registered reliability gates failed, so the result is a labelled diagnostic and not a validated agent result."
+            },
+            {
+              "id": "AP3-HD",
+              "name": "Causal RAG — With Historical Documents",
+              "status": "blocked",
+              "note": "Implemented: the reduced-evidence pool plus official documents published before each decision. Fed and Census documents downloaded and validated (474); the three BLS release families are blocked from this cloud environment."
+            },
+            {
+              "id": "AP3-RE-PROXY",
+              "name": "Policy-path proxy variant (Reduced Evidence)",
+              "status": "awaiting_validation",
+              "note": "Sensitivity variant: the unavailable fed funds futures input replaced by a labelled proxy (2-year yield minus 4-week bill). Not the frozen specification."
+            },
+            {
+              "id": "AP3-RE-vs-HD",
+              "name": "Do historical documents help?",
+              "status": "planned",
+              "note": "Development-period comparison of the two versions; secondary, never in the primary family."
+            },
+            {
+              "id": "AP3-STD",
+              "name": "Standard RAG vs Causal RAG",
+              "status": "planned",
+              "note": "Flat similarity retrieval instead of graph routing; model, corpus, budget and runs matched. Needs Causal RAG results first."
+            },
+            {
+              "id": "AP3-NR/RG/PERM/MED",
+              "name": "Ablations and placebo controls",
+              "status": "planned",
+              "note": "No retrieval (contamination probe), rewired graph, permuted agent columns (capacity placebo), raw mediators without causal routing (v3 design proposal)."
+            },
+            {
+              "id": "AP3-VAR",
+              "name": "Model and calibration variants",
+              "status": "planned",
+              "note": "To be defined and pre-registered; keep the set small."
+            }
+          ]
+        }
+      ]
+    },
+    "primary_metric": "Net CER (certainty-equivalent return) = 12 * (mean monthly net excess return - 0.5 * delta * variance of monthly net excess return), delta = 2.5. It is not a compound annual return.",
+    "pending_methodology_decisions": [
+      "Whether to resume the paused signal experiments as Deterministic within-approach experiments."
+    ],
+    "primary_metric_status": "Approved 2026-10-28: net CER is the primary performance metric for the three-approach comparison.",
+    "supporting_metrics": [
+      "Sharpe ratio",
+      "Maximum drawdown",
+      "Volatility",
+      "Cumulative return",
+      "Turnover",
+      "Results relative to the frozen common benchmark (descriptive)"
+    ],
+    "evaluation_periods": {
+      "primary": "2024-01..2026-08 (confirmatory; primary Holm family of three pairwise net-CER contrasts)",
+      "secondary": "2023-01..2023-12 (same contrasts and metrics, reported separately and labelled secondary; no confirmatory claim; with 12 months the 6-month block bootstrap has two blocks, so its intervals are reported as descriptive only)",
+      "sealed": "2023-01..2026-08 until final GO"
+    },
+    "research_question": "Do the AI-based approaches improve investment performance relative to the conventional Deterministic Quantitative Model?",
+    "research_baseline": {
+      "system": "AP1",
+      "name": "Deterministic Quantitative Model",
+      "role": "Primary research baseline. The primary comparisons are AP2B (Agentic Workflow, JEV) vs AP1 and AP3 (Agentic Causal RAG) vs AP1, which test whether each AI approach improves on the baseline, and AP3 vs AP2B, which compares the two AI approaches. One Holm family of three, unchanged."
+    },
+    "passive_reference": "The frozen common benchmark (60% SPY / 40% IEF) is a secondary passive investment reference. It is not the research baseline and not a fourth approach; comparisons with it answer a separate question and never enter the primary family."
+  },
+  "within_approach_contrasts": [
+    [
+      "AP2A",
+      "AP2B"
+    ]
+  ],
+  "within_approach_contrasts_note": "Committee only vs JEV only, reported as a separate within-approach experiment; not part of the primary family.",
+  "change_log": [
+    {
+      "version": "1.2",
+      "date": "2026-10-28",
+      "change": "research_design only: within-approach experiments grouped by approach with status classes; secondary experiments folded into those groups; pending methodology decisions recorded. No scoring setting changed."
+    },
+    {
+      "version": "1.3",
+      "date": "2026-10-28",
+      "change": "common_benchmark added: 60% US Equities / 40% Intermediate-Term Treasuries (SPY/IEF), monthly rebalancing at the shared entry close, shared costs and accounting; status specified, awaiting freeze approval; evaluation and display layer only. Primary contrasts, windows, costs and metrics unchanged. (Replaces the 60/40 SPY/TLT draft committed the same day in 08580a2, on the project lead's decision: TLT's gate 5 disposition is pending and IEF's duration is closer to a conventional 60/40 bond sleeve. No result against the draft was reported.)"
+    },
+    {
+      "version": "1.4",
+      "date": "2026-10-28",
+      "change": "common_benchmark frozen on the project lead's approval (fingerprint fffd92b9731598385353749424b643e83ffbf0567403624cea7e170a75741aed; record native_backtest/config/approvals/common_benchmark_freeze_2026-10-28.json). Wording of its role and of the decisions / benchmark-mix split finalised as approved ('common passive reference'; 'accounting decomposition'); weights, rules, timing, costs and metrics unchanged from the proposal. Primary contrasts, windows, costs and metrics unchanged."
+    },
+    {
+      "version": "1.5",
+      "date": "2026-10-28",
+      "change": "Project lead's decisions: net CER confirmed as the primary metric; supporting metrics listed; primary historical period 2024-01..2026-08; 2023 a separately reported secondary period; the whole 2023-01..2026-08 window stays sealed (lock unchanged). Costs, timing, metrics settings and the frozen common benchmark unchanged."
+    },
+    {
+      "version": "1.6",
+      "date": "2026-10-28",
+      "change": "Reporting amendment: the Deterministic Quantitative Model is stated as the primary research baseline (research question and primary comparisons recorded; the contrasts and Holm family are unchanged); the frozen 60/40 SPY/IEF benchmark is relabelled the Passive Portfolio Reference and shown as an optional reference line and a separate comparison. Numerical specification, fingerprint, accounting and historical calculations unchanged."
+    },
+    {
+      "version": "1.7",
+      "date": "2026-10-29",
+      "change": "Causal RAG versions: Reduced Evidence and With Historical Documents added as within-approach entries; the primary Causal RAG version is chosen and approved before the protected window opens (native_backtest/ap3/variants_v1.json). No frozen or fingerprinted field changed."
+    },
+    {
+      "version": "1.8",
+      "date": "2026-10-29",
+      "change": "Within-approach experiment statuses only: the Deterministic financial-signal experiments (B1..B5, B-All) are resumed per the project lead's written decision and pre-registration and are now tested; Market regimes and Committee + JEV are completed and tested. Results: native_backtest/out/within_approach/within_approach_v1.json. No frozen setting, window, cost, metric, contrast or fingerprint changed; no experiment definition changed."
+    },
+    {
+      "version": "1.9",
+      "date": "2026-10-29",
+      "change": "Within-approach experiment status only: AP3-RE (Causal RAG — Reduced Evidence) moves from awaiting_validation to exploratory. Its full 95-month qwen3:4b agent replay completed and the 46 development months were carried through the native pipeline, but both pre-registered reliability gates still failed (G3b accuracy 0.5667 with 2 opposite-direction errors; G3a schema-valid call rate 0.9771), so the result is a labelled diagnostic and never a validated agent result. No threshold, prompt, model, frozen setting, window, cost, metric, contrast or fingerprint changed; no experiment definition changed; no other experiment status moved."
+    }
+  ],
+  "common_benchmark": {
+    "status": "frozen",
+    "status_note": "Frozen on 2026-10-28 by the project lead's approval, before the protected window was opened. It may not change after the protected window opens; results against it are reported whatever they show.",
+    "id": "COMMON_60_40_SPY_IEF",
+    "label": "60% US Equities / 40% Intermediate-Term Treasuries",
+    "short_label": "60/40 equities / intermediate Treasuries",
+    "instruments": {
+      "SPY": "SPDR S&P 500 ETF Trust (US large-cap equities)",
+      "IEF": "iShares 7-10 Year Treasury Bond ETF (intermediate-term US Treasuries)"
+    },
+    "weights": {
+      "SPY": 0.6,
+      "IEF": 0.4
+    },
+    "not_a_market_portfolio": "A fixed reference mix of two of the evaluation assets. It is not a neutral, broad-market or policy benchmark: it holds no corporate credit, no long-duration Treasuries and no cash, and it is closer to the Deterministic and Causal RAG universes (SPY/IEF/LQD) than to JEV's (SPY/TLT).",
+    "rebalance": "monthly_to_target_at_entry_close",
+    "rules": {
+      "evaluation_dates": "identical to the systems': decision at 20:00 ET on the last common trading day of each month (SPY, IEF, LQD, TLT calendars)",
+      "execution": "back to 60/40 at the close of the first common trading day after month-end; held to the next such close; weights drift with returns in between",
+      "transaction_costs": "the shared 5 bp per dollar traded against the drifted weights; the first month starts from cash",
+      "dividends": "distribution-adjusted closing prices from the pinned, hash-verified inputs (total return)",
+      "return_calculation": "monthly net total return over the exact holding period; excess return over DTB4WK accrued over the same dates; all metrics by the shared evaluator",
+      "cash": "none held (fully invested)"
+    },
+    "role": "A common passive reference for evaluation and display only: one reference line for all three primary approaches and secondary, descriptive comparisons. It is not a fully neutral portfolio and not a direct measure of model skill. It never enters the primary Holm family, never redefines the primary endpoint and is never an input to any system.",
+    "decomposition": "Accounting decomposition, not a causal attribution: CER(system) - CER(common) = [CER(system) - CER(own native benchmark)] (labelled 'decisions') + [CER(own native benchmark) - CER(common)] (labelled 'benchmark mix'). Exact by construction.",
+    "reporting": [
+      "Shown as the Passive Portfolio Reference — 60% SPY / 40% IEF: a secondary investment reference, not the research baseline and not a fourth approach.",
+      "Main dashboard chart: the approaches' lines with the Deterministic research baseline; the passive portfolio is an optional, clearly labelled dashed reference line, off by default.",
+      "A separate 'passive investment comparison' (does a strategy beat a simple 60/40 portfolio?) is kept apart from the research comparison (does an AI approach improve on the Deterministic baseline?).",
+      "Comparisons with each approach's native benchmark in the approach's detail view.",
+      "The decisions / benchmark-mix split shown and described as an accounting decomposition, not a causal attribution.",
+      "Results against the passive portfolio reported whatever they show."
+    ],
+    "selection_rationale": [
+      "Both instruments passed Stage 2 gate 5 (distribution adjustment, C1-C6) over 2014-02..2023-02-01; TLT's gate 5 result (FAIL on C2 preserved) is still awaiting team sign-off, so the reference line does not depend on it.",
+      "IEF's interest-rate sensitivity (7-10 year Treasuries) is closer to the bond sleeve of a conventional 60/40 than TLT's (20+ year Treasuries).",
+      "No single fixed mix is neutral across the approaches' universes; this one overlaps the Deterministic and Causal RAG universes, and the attribution makes that visible."
+    ],
+    "information_seen_before_selection": "Development-period (2019-03..2022-12) figures for 60/40 SPY/TLT, 60/40 SPY/IEF and 45/35/20 SPY/IEF/LQD were reviewed. No protected-window data were seen.",
+    "data_gates": {
+      "SPY": "gate 5 PASS (Stage 2)",
+      "IEF": "gate 5 PASS (Stage 2)"
+    },
+    "frozen": {
+      "on": "2026-10-28",
+      "approval_record": "native_backtest/config/approvals/common_benchmark_freeze_2026-10-28.json",
+      "fingerprint_sha256": "fffd92b9731598385353749424b643e83ffbf0567403624cea7e170a75741aed"
+    },
+    "display_label": "Passive Portfolio Reference — 60% SPY / 40% IEF",
+    "reporting_amendments": [
+      {
+        "date": "2026-10-28",
+        "record": "native_backtest/config/approvals/common_benchmark_reporting_amendment_2026-10-28.json",
+        "summary": "Relabelled as the Passive Portfolio Reference and moved from the main chart's default view to an optional line and a separate comparison; the Deterministic model is the research baseline. Numerical specification and fingerprint unchanged."
+      }
+    ]
+  }
+}

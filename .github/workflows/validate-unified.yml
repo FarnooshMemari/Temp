@@ -12,8 +12,8 @@ jobs:
         with:
           python-version: '3.11'
       - name: Install dependencies
-        run: python -m pip install numpy pandas scikit-learn scipy pytest networkx
+        run: python -m pip install numpy pandas scikit-learn scipy pytest networkx requests jsonschema
       - name: Offline tests
-        run: python -m pytest -q unified_comparison/test_level_playing_field.py unified_comparison/test_unified.py
+        run: python -m pytest -q unified_comparison/test_level_playing_field.py unified_comparison/test_unified.py native_backtest/tests/test_ap3_spytlt_hardening.py
       - name: Verify dashboard files
         run: test -f site/unified.html && test -f site/data/unified.json

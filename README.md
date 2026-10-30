@@ -1,5 +1,12 @@
 # Protofin
 
+The unified one-month SPY/TLT comparison is documented in
+[unified_comparison/README.md](unified_comparison/README.md), with the dashboard at
+`site/unified.html`. Causal RAG execution failures are recorded separately from
+evidence judgments; see [CAUSAL_RAG_HARDENING.md](CAUSAL_RAG_HARDENING.md).
+The committed comparison was recomputed from hash-verified pinned inputs for the
+2019-03 through 2022-12 development period. Causal RAG remains pending validated inference.
+
 An AI investment committee inside a rule-based allocator. Two large-language-model personas give independent views on the macro picture, a CIO persona synthesises them, and Black-Litterman plus a constrained optimizer turn that into a stock/bond split. Every step is measurable, every input has full point-in-time history, and the public demo runs entirely in the browser with no API key anywhere.
 
 - **Live demo:** https://protofin.pages.dev

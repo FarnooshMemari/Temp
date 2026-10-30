@@ -1,0 +1,282 @@
+{
+  "_comment": "Machine-readable mirror of the gate table in native_backtest/docs/GO_NO_GO_2026-10-28.md, read by the MVP. Status values: pass, review (a recorded failure or open question awaiting a team decision), pending (not yet done; nothing external blocks it), blocked (waits on an external approval or data), na (does not apply). Update this file together with the GO/NO-GO document.",
+  "as_of": "2026-10-29",
+  "decision": "NO-GO",
+  "columns": [
+    "det",
+    "jev",
+    "rag",
+    "com"
+  ],
+  "gates": [
+    {
+      "name": "Reproduces its own saved results",
+      "cells": {
+        "det": {
+          "status": "pass",
+          "note": "Development rerun byte-identical"
+        },
+        "jev": {
+          "status": "pass",
+          "note": "All 272 saved answers replayed exactly; the model itself cannot be re-run"
+        },
+        "rag": {
+          "status": "na",
+          "note": "New build, no earlier results to reproduce"
+        },
+        "com": {
+          "status": "pass",
+          "note": "All 272 runs rebuilt from the saved model replies"
+        }
+      }
+    },
+    {
+      "name": "Valid, timestamped decision records",
+      "cells": {
+        "det": {
+          "status": "pass",
+          "note": "46 development decisions"
+        },
+        "jev": {
+          "status": "pass",
+          "note": "272 decisions"
+        },
+        "rag": {
+          "status": "blocked",
+          "note": "Needs approved model runs"
+        },
+        "com": {
+          "status": "pass",
+          "note": "272 decisions"
+        }
+      }
+    },
+    {
+      "name": "Verified prices and cash rate",
+      "cells": {
+        "det": {
+          "status": "review",
+          "note": "Development check passed. Test-window check: every criterion passes except a date-label exception on 2024-04-01 for the Treasury and corporate bond funds (official file repeats the previous NAV over Good Friday). Accepted in principle as not material; formal result kept; team sign-off pending"
+        },
+        "jev": {
+          "status": "review",
+          "note": "Long-Treasury fund: development check failed one criterion (diagnosed as a month-start price effect; failure kept, NAV robustness check pre-registered; team decision pending). Test-window check passes that criterion; same 2024-04-01 date-label exception, accepted in principle; team sign-off pending"
+        },
+        "rag": {
+          "status": "review",
+          "note": "Same assets and checks as the Deterministic model"
+        },
+        "com": {
+          "status": "review",
+          "note": "Same long-Treasury checks as JEV"
+        }
+      }
+    },
+    {
+      "name": "Shared scoring matches its own scoring",
+      "cells": {
+        "det": {
+          "status": "pass",
+          "note": "Identical"
+        },
+        "jev": {
+          "status": "pass",
+          "note": "Each adjustment measured step by step"
+        },
+        "rag": {
+          "status": "pending",
+          "note": "Needs model runs"
+        },
+        "com": {
+          "status": "pass",
+          "note": "Each adjustment measured step by step"
+        }
+      }
+    },
+    {
+      "name": "Software, data and dashboard tests",
+      "cells": {
+        "det": {
+          "status": "pass",
+          "note": "Passing"
+        },
+        "jev": {
+          "status": "pass",
+          "note": "Passing"
+        },
+        "rag": {
+          "status": "pass",
+          "note": "Both versions run end to end with demo responses; no look-ahead"
+        },
+        "com": {
+          "status": "pass",
+          "note": "Passing"
+        }
+      }
+    },
+    {
+      "name": "Research graph limited to papers published before each year",
+      "cells": {
+        "det": {
+          "status": "na"
+        },
+        "jev": {
+          "status": "na"
+        },
+        "rag": {
+          "status": "pass",
+          "note": "12 yearly graphs; rebuild identical"
+        },
+        "com": {
+          "status": "na"
+        }
+      }
+    },
+    {
+      "name": "Causal RAG — Reduced Evidence built",
+      "cells": {
+        "det": {
+          "status": "na"
+        },
+        "jev": {
+          "status": "na"
+        },
+        "rag": {
+          "status": "pass",
+          "note": "Research findings plus market and economic data notes"
+        },
+        "com": {
+          "status": "na"
+        }
+      }
+    },
+    {
+      "name": "Historical documents with publication times",
+      "cells": {
+        "det": {
+          "status": "na"
+        },
+        "jev": {
+          "status": "na"
+        },
+        "rag": {
+          "status": "blocked",
+          "note": "474 Fed and Census documents validated; BLS (about 420) blocked"
+        },
+        "com": {
+          "status": "na"
+        }
+      }
+    },
+    {
+      "name": "Market data available at each decision",
+      "cells": {
+        "det": {
+          "status": "na"
+        },
+        "jev": {
+          "status": "na"
+        },
+        "rag": {
+          "status": "pending",
+          "note": "6 of 7 series validated; fed funds futures need Bloomberg data"
+        },
+        "com": {
+          "status": "na"
+        }
+      }
+    },
+    {
+      "name": "First real-model test and test cases",
+      "cells": {
+        "det": {
+          "status": "na"
+        },
+        "jev": {
+          "status": "na"
+        },
+        "rag": {
+          "status": "pending",
+          "note": "Free Qwen3 4B run on a free GPU: ready, not yet run; 30 labelled test cases and thresholds fixed in advance"
+        },
+        "com": {
+          "status": "na"
+        }
+      }
+    },
+    {
+      "name": "Development replay, human audit and calibration",
+      "cells": {
+        "det": {
+          "status": "na"
+        },
+        "jev": {
+          "status": "na"
+        },
+        "rag": {
+          "status": "pending",
+          "note": "Follows the free sample run if the reliability checks pass"
+        },
+        "com": {
+          "status": "na"
+        }
+      }
+    },
+    {
+      "name": "Contamination register and hindsight audit signed",
+      "cells": {
+        "det": {
+          "status": "pending",
+          "note": "Draft ready, unsigned"
+        },
+        "jev": {
+          "status": "pending",
+          "note": "Draft ready, unsigned"
+        },
+        "rag": {
+          "status": "pending",
+          "note": "Draft ready, unsigned"
+        },
+        "com": {
+          "status": "pending",
+          "note": "Draft ready, unsigned"
+        }
+      }
+    },
+    {
+      "name": "Primary Causal RAG version chosen and approved",
+      "cells": {
+        "det": {
+          "status": "na"
+        },
+        "jev": {
+          "status": "na"
+        },
+        "rag": {
+          "status": "pending",
+          "note": "Decided before the test opens, never on test results"
+        },
+        "com": {
+          "status": "na"
+        }
+      }
+    },
+    {
+      "name": "Freeze and signed approval to open the test",
+      "cells": {
+        "det": {
+          "status": "pending"
+        },
+        "jev": {
+          "status": "pending"
+        },
+        "rag": {
+          "status": "pending"
+        },
+        "com": {
+          "status": "pending"
+        }
+      }
+    }
+  ]
+}

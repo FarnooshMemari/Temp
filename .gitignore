@@ -44,3 +44,7 @@ docs/protofin-pipeline.meta.json
 .DS_Store
 Thumbs.db
 *.swp
+
+# Hash-pinned third-party snapshots are restored with the fetch scripts.
+stage2/data/_pinned/
+out/ap1/stage2_dev_rerun/

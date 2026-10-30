@@ -1,0 +1,284 @@
+{
+ "_comment": "AP3 approval stage A: connectivity, canary and a 3-month smoke test on real Llama 3.1 70B Instruct. PREPARED, NOT APPROVED: no paid call has been made. The runner (native_backtest/scripts/ap3_smoke_test.py) refuses to call a paid provider unless the approval record below exists, AP3_ALLOW_PAID_INFERENCE=1 is set and credentials are present; a CostGuard stops it before any call that could pass the cap.",
+ "version": "v1.1",
+ "created": "2026-10-28",
+ "status": "withdrawn 2026-10-29: $0 budget; the smoke test runs free on a local model instead (scripts/ap3_free_run.py)",
+ "cap_usd": 15.0,
+ "approval_record": "native_backtest/config/approvals/ap3_inference_approval_A.json",
+ "approval_record_format": {
+  "stage": "A",
+  "provider": "hf_endpoint",
+  "cap_usd": "<= providers.<provider>.cap_usd",
+  "approved_by": "<name>",
+  "approved_utc": "<timestamp>",
+  "note": "written only after the project lead's explicit approval in the chat"
+ },
+ "providers": {
+  "bedrock": {
+   "description": "Amazon Bedrock on-demand, Converse API, in-Region model ID (no cross-Region inference profile)",
+   "endpoint": "https://bedrock-runtime.us-west-2.amazonaws.com",
+   "api": "Converse (bedrock-runtime)",
+   "region": "us-west-2",
+   "model_id": "meta.llama3-1-70b-instruct-v1:0",
+   "version_guarantee": "Versioned model ID; AWS does not change the model behind an ID. Serving precision is not published.",
+   "lifecycle": "Legacy since 2026-09-30; end of life 2027-03-30. Legacy models cannot be enabled by new customers; existing customers lose access after 15 days of inactivity; public extended access (possibly higher prices) not yet announced.",
+   "usable_only_if": "the AWS account already has active access to this model ID",
+   "pricing_for_guard": {
+    "mode": "tokens",
+    "usd_per_m_input": 0.99,
+    "usd_per_m_output": 0.99
+   },
+   "pricing_note": "AWS's pricing page did not render a figure for this model; third-party listings show $0.72 per million input and output tokens. The guard counts at $0.99 to leave room for extended-access pricing; confirm the price in the AWS console before approval.",
+   "credentials": {
+    "env": [
+     "AWS_ACCESS_KEY_ID",
+     "AWS_SECRET_ACCESS_KEY",
+     "AWS_REGION=us-west-2"
+    ],
+    "how": "Environment secrets of this environment only; never in chat or in git."
+   },
+   "iam_policy": {
+    "Version": "2012-10-17",
+    "Statement": [
+     {
+      "Sid": "AP3InvokeLlama31Only",
+      "Effect": "Allow",
+      "Action": [
+       "bedrock:InvokeModel"
+      ],
+      "Resource": "arn:aws:bedrock:us-west-2::foundation-model/meta.llama3-1-70b-instruct-v1:0"
+     }
+    ]
+   },
+   "network_allowlist": [
+    "bedrock-runtime.us-west-2.amazonaws.com"
+   ],
+   "cap_usd": 5.0,
+   "seed_supported": false
+  },
+  "hf_endpoint": {
+   "description": "Dedicated Hugging Face Inference Endpoint (AWS us-east-1) running vLLM's OpenAI-compatible server",
+   "model_repo": "meta-llama/Llama-3.1-70B-Instruct",
+   "revision": "1605565b47bb9346c5515c34102e054115b4f98b",
+   "container_image": "vllm/vllm-openai:<pinned version tag, recorded at creation>",
+   "dtype": "bfloat16 (no quantisation)",
+   "hardware": "nvidia-a100 x2 (160 GB), tensor parallel 2, max model length 16384",
+   "endpoint": "<https://...endpoints.huggingface.cloud>/v1/chat/completions",
+   "version_guarantee": "Exact weights (repository commit) and exact serving engine (image tag); unaffected by provider model retirement.",
+   "lifecycle": "Open weights under the Llama 3.1 Community License; the license must be accepted on the Hugging Face account.",
+   "pricing_for_guard": {
+    "mode": "hourly",
+    "usd_per_hour": 10.0,
+    "started_utc": "<set by the controller at creation>"
+   },
+   "pricing_note": "$5 per hour for nvidia-a100 x2 on AWS, billed per minute while initialising or running. The $5 cap therefore buys one hour including start-up (loading ~140 GB of weights); the endpoint is paused as soon as the run ends.",
+   "credentials": {
+    "env": [
+     "HF_TOKEN"
+    ],
+    "how": "Environment secret HF_TOKEN only: a fine-grained token that can manage Inference Endpoints and read the gated meta-llama repository. The endpoint URL and the pinned revision are set by the controller."
+   },
+   "network_allowlist": [
+    "huggingface.co",
+    "api.endpoints.huggingface.cloud",
+    "<endpoint host>.us-east-1.aws.endpoints.huggingface.cloud (or the endpoints.huggingface.cloud suffix)"
+   ],
+   "revision_note": "Latest commit of meta-llama/Llama-3.1-70B-Instruct (last modified 2024-12-15), BF16, gated: manual licence acceptance; verified 2026-10-28",
+   "instance": "AWS nvidia-h200 x2 (282 GB), $10/hour, billed per minute including start-up; alternative nvidia-a100 x2 (160 GB, $5/hour) leaves little KV-cache room for 141 GB of BF16 weights",
+   "determinism": "vLLM is reproducible only on the same hardware and the same vLLM version, with a fixed seed and batch invariance enabled (vLLM reproducibility docs); hardware, image tag, seed and settings are recorded and never changed during a run",
+   "cap_usd": 15.0,
+   "endpoint_spec": {
+    "name": "protofin-ap3-llama31-70b",
+    "repository": "meta-llama/Llama-3.1-70B-Instruct",
+    "revision": "1605565b47bb9346c5515c34102e054115b4f98b",
+    "vendor": "aws",
+    "region": "us-east-1",
+    "instance_type": "nvidia-h200",
+    "instance_size": "x2",
+    "image": "vllm/vllm-openai:v0.30.0@sha256:8a69ffad015f138d7170c4ddc429e230a3bc1c1719f67e14324749df200a4b90",
+    "image_note": "vLLM v0.30.0 (released 2026-09-22), pinned by digest; not 'latest' and not a nightly",
+    "container_args": [
+     "--model",
+     "/repository",
+     "--served-model-name",
+     "meta-llama/Llama-3.1-70B-Instruct",
+     "--dtype",
+     "bfloat16",
+     "--tensor-parallel-size",
+     "2",
+     "--max-model-len",
+     "32768",
+     "--seed",
+     "0",
+     "--port",
+     "8000"
+    ],
+    "env": {
+     "VLLM_BATCH_INVARIANT": "1"
+    },
+    "min_replica": 0,
+    "max_replica": 1,
+    "scale_to_zero_timeout_minutes": 15,
+    "to_confirm_in_the_console_before_approval": [
+     "the container arguments field is applied to this custom image",
+     "the image digest shown matches the one above",
+     "the instance is listed as nvidia-h200 x2 in us-east-1"
+    ]
+   },
+   "cost_estimate": {
+    "rate_usd_per_hour": 10.0,
+    "billing": "per minute, including initialisation (Hugging Face pricing page)",
+    "assumptions": {
+     "startup_minutes": "15-30 (141 GB of BF16 weights to load; not published by Hugging Face; measured in the smoke test)",
+     "decode_tokens_per_second_per_stream": "15-25 with batch invariance on 2x H200 (assumption; measured in the smoke test)",
+     "parallelism": "the three smoke-test months run concurrently; the replay runs 8 months concurrently"
+    },
+    "smoke_test": {
+     "tokens_typical": "299k in / 66k out",
+     "tokens_upper": "1.18M in / 231k out",
+     "minutes_typical": "35-60",
+     "minutes_upper": "80-130",
+     "usd_typical": "6-10",
+     "usd_upper": "13-22",
+     "cap_usd": 15.0,
+     "if_cap_reached": "the guard stops before the next call, the watchdog pauses the endpoint, partial results and measured throughput are kept"
+    },
+    "development_programme_separate_approval": {
+     "what": "G3a 12-month run, G3b fixtures, 95-month replay",
+     "tokens_typical": "10.7M in / 2.36M out",
+     "tokens_upper": "41.8M in / 8.37M out",
+     "usd_typical": "40-75",
+     "usd_upper": "up to about 190",
+     "note": "estimated at 120-200 tokens per second across 8 concurrent months plus start-ups; replaced by the smoke test's measured throughput before approval B is requested"
+    }
+   },
+   "safeguards": {
+    "authorized_usd": 15.0,
+    "usd_per_hour": 10.0,
+    "init_deadline_minutes": 40,
+    "stop_new_calls_minute": 65,
+    "delete_minute": 68,
+    "request_timeout_seconds": 300,
+    "scale_to_zero_minutes": 15,
+    "poll_seconds": 20,
+    "note": "All deadlines run from just before the create call. Worst cases: python -m native_backtest.scripts.ap3_hf_endpoint"
+   }
+  }
+ },
+ "not_recommended": {
+  "deepinfra": "Serverless; after at least one week's notice, a retired model's requests are forwarded to a replacement model, which breaks the model-version guarantee. Kept in the client for reference only."
+ },
+ "sampling": {
+  "canary_temperature": 0.0,
+  "agents": "as locked in native_backtest/ap3/limits_v1.json"
+ },
+ "canary": [
+  {
+   "id": "c1",
+   "system": "Reply with one JSON object only.",
+   "user": "Return {\"ok\": true}.",
+   "schema": {
+    "type": "object",
+    "required": [
+     "ok"
+    ],
+    "properties": {
+     "ok": {
+      "const": true
+     }
+    }
+   }
+  },
+  {
+   "id": "c2",
+   "system": "Reply with one JSON object only.",
+   "user": "Add 17 and 25. Return {\"sum\": <number>}.",
+   "schema": {
+    "type": "object",
+    "required": [
+     "sum"
+    ],
+    "properties": {
+     "sum": {
+      "const": 42
+     }
+    }
+   }
+  },
+  {
+   "id": "c3",
+   "system": "Reply with one JSON object only.",
+   "user": "Which date is earlier, 2015-03-31 or 2014-12-31? Return {\"earlier\": \"YYYY-MM-DD\"}.",
+   "schema": {
+    "type": "object",
+    "required": [
+     "earlier"
+    ],
+    "properties": {
+     "earlier": {
+      "const": "2014-12-31"
+     }
+    }
+   }
+  },
+  {
+   "id": "c4",
+   "system": "Reply with one JSON object only.",
+   "user": "A data release came in above the consensus forecast. Return {\"direction\": \"above\" or \"below\"}.",
+   "schema": {
+    "type": "object",
+    "required": [
+     "direction"
+    ],
+    "properties": {
+     "direction": {
+      "const": "above"
+     }
+    }
+   }
+  },
+  {
+   "id": "c5",
+   "system": "Reply with one JSON object only.",
+   "user": "Sort these words alphabetically: pear, apple, fig. Return {\"sorted\": [...]}.",
+   "schema": {
+    "type": "object",
+    "required": [
+     "sorted"
+    ],
+    "properties": {
+     "sorted": {
+      "const": [
+       "apple",
+       "fig",
+       "pear"
+      ]
+     }
+    }
+   }
+  }
+ ],
+ "months": [
+  "2015-03",
+  "2019-06",
+  "2020-03"
+ ],
+ "packets": {
+  "file": "native_backtest/out/ap3/dev_readiness/ap3_packets_v2.jsonl",
+  "sha256": "0522bb07708a98f2ed9178f334d2e58576d8c89dcb7290a58d42da4d74070b5e",
+  "note": "inventory v2 packets (provisional until fed funds futures are supplied)"
+ },
+ "corpus": "Runs Causal RAG — Reduced Evidence: the Testing Agent retrieves from research claims and point-in-time data notes (native_backtest/ap3/evidence_pool.py), so assessor calls are exercised. Token sizes stay within the budget, which modelled assessor prompts with 12 corpus excerpts of 170-260 words; reduced-evidence excerpts are 40-90 words.",
+ "max_calls": 200,
+ "outputs": "native_backtest/out/ap3/smoke/<provider>/ (real model outputs only; the runner refuses mock providers). Smoke records are never decision records and are never scored.",
+ "pass_criteria": [
+  "All five canary replies parse and match their schemas; their response hashes are recorded for later canary comparisons.",
+  "At least 95% of agent calls return JSON that validates against the locked schemas.",
+  "Every cited pathway ID exists in the library or in a tool result for that month.",
+  "Spend stays within the cap; measured input and output tokens per month are recorded and replace the assumptions in the budget for approval B."
+ ],
+ "checked": "2026-10-28: provider availability, pricing and pinning re-verified from official pages (see AP3_INFERENCE_PROVIDER_SPEC_2026-10-28.md, 'Verified 2026-10-28')",
+ "cap_note": "Each provider has its own stage-A cap (providers.<p>.cap_usd): $5 on Bedrock (per-token), $15 on a dedicated endpoint (about 90 minutes of 2x H200 including start-up). Either needs explicit approval.",
+ "variant": "reduced_evidence",
+ "max_parallel_tests": 6
+}

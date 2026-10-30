@@ -1,0 +1,2498 @@
+{
+ "spy60_ridge": {
+  "prior_spy": 0.6,
+  "mapping": "ridge",
+  "metrics": {
+   "DET": {
+    "n_months": 46,
+    "net_annualized_excess_return": 0.06260215236056545,
+    "annualized_volatility": 0.13969883534944877,
+    "net_sharpe": 0.44812222094743803,
+    "max_drawdown": -0.23979323696842247,
+    "cer_delta_2_5": 0.038207446613074944,
+    "mean_one_way_turnover_per_rebalance": 0.02684134882559829,
+    "annualized_one_way_turnover": 0.3220961859071795,
+    "total_cost": 0.001234702045977521,
+    "net_cer": 0.038207446613074944,
+    "mean_spy_weight": 0.5945921220740678,
+    "min_spy_weight": 0.5653729994337401,
+    "max_spy_weight": 0.6173234548422938
+   },
+   "JEV": {
+    "n_months": 46,
+    "net_annualized_excess_return": 0.058503749749717865,
+    "annualized_volatility": 0.14592321980099807,
+    "net_sharpe": 0.4009214560198302,
+    "max_drawdown": -0.2443930949049994,
+    "cer_delta_2_5": 0.031886767153354874,
+    "mean_one_way_turnover_per_rebalance": 0.0566986664211338,
+    "annualized_one_way_turnover": 0.6803839970536056,
+    "total_cost": 0.0026081386553721553,
+    "net_cer": 0.031886767153354874,
+    "mean_spy_weight": 0.600035187544161,
+    "min_spy_weight": 0.475225135559797,
+    "max_spy_weight": 0.7695581708668477
+   },
+   "COMMITTEE": {
+    "n_months": 46,
+    "net_annualized_excess_return": 0.07207039083883562,
+    "annualized_volatility": 0.1584251946642124,
+    "net_sharpe": 0.4549174832424304,
+    "max_drawdown": -0.2443669425866577,
+    "cer_delta_2_5": 0.04069721295834362,
+    "mean_one_way_turnover_per_rebalance": 0.09101369727209944,
+    "annualized_one_way_turnover": 1.0921643672651933,
+    "total_cost": 0.004186630074516574,
+    "net_cer": 0.04069721295834362,
+    "mean_spy_weight": 0.6331286359668846,
+    "min_spy_weight": 0.4874297977870195,
+    "max_spy_weight": 0.8
+   },
+   "JEV_12M": {
+    "n_months": 46,
+    "net_annualized_excess_return": 0.0578696641305165,
+    "annualized_volatility": 0.14751332630504577,
+    "net_sharpe": 0.39230126240151797,
+    "max_drawdown": -0.24077718521964575,
+    "cer_delta_2_5": 0.03066943733354286,
+    "mean_one_way_turnover_per_rebalance": 0.043094815196095614,
+    "annualized_one_way_turnover": 0.5171377823531473,
+    "total_cost": 0.001982361499020398,
+    "net_cer": 0.03066943733354286,
+    "mean_spy_weight": 0.5965268915077239,
+    "min_spy_weight": 0.5536987473844946,
+    "max_spy_weight": 0.7148076920850622
+   },
+   "COMMITTEE_12M": {
+    "n_months": 46,
+    "net_annualized_excess_return": 0.06279743878753966,
+    "annualized_volatility": 0.1556638978057399,
+    "net_sharpe": 0.4034168466339412,
+    "max_drawdown": -0.24572145360988296,
+    "cer_delta_2_5": 0.03250837743744488,
+    "mean_one_way_turnover_per_rebalance": 0.06760188551253245,
+    "annualized_one_way_turnover": 0.8112226261503894,
+    "total_cost": 0.003109686733576493,
+    "net_cer": 0.03250837743744488,
+    "mean_spy_weight": 0.616912424162589,
+    "min_spy_weight": 0.4870162640949688,
+    "max_spy_weight": 0.8
+   },
+   "PLACEBO": {
+    "n_months": 46,
+    "net_annualized_excess_return": 0.06295509034571146,
+    "annualized_volatility": 0.13970119941138956,
+    "net_sharpe": 0.4506410153310313,
+    "max_drawdown": -0.23971298898315063,
+    "cer_delta_2_5": 0.03855955894948543,
+    "mean_one_way_turnover_per_rebalance": 0.026228597269014914,
+    "annualized_one_way_turnover": 0.31474316722817897,
+    "total_cost": 0.0012065154743746856,
+    "net_cer": 0.03855955894948543,
+    "mean_spy_weight": 0.5956970546116083,
+    "min_spy_weight": 0.5653729994337401,
+    "max_spy_weight": 0.6192442584705352
+   },
+   "STATIC": {
+    "n_months": 46,
+    "net_annualized_excess_return": 0.06803863436955201,
+    "annualized_volatility": 0.13967282529372166,
+    "net_sharpe": 0.4871286467247425,
+    "max_drawdown": -0.23962165840052052,
+    "cer_delta_2_5": 0.0436530117126389,
+    "mean_one_way_turnover_per_rebalance": 0.025145175747231456,
+    "annualized_one_way_turnover": 0.30174210896677744,
+    "total_cost": 0.001156678084372647,
+    "net_cer": 0.0436530117126389,
+    "mean_spy_weight": 0.6000000000000002,
+    "min_spy_weight": 0.6,
+    "max_spy_weight": 0.6
+   }
+  },
+  "vs_static": {
+   "DET": {
+    "cer_difference": -0.005445565099563954,
+    "ci90": [
+     -0.009596462419928316,
+     -0.001983056319650088
+    ],
+    "ci95": [
+     -0.010485288453109153,
+     -0.0014762500453327015
+    ],
+    "p_two_sided_bootstrap": 0.002,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "JEV": {
+    "cer_difference": -0.011766244559284024,
+    "ci90": [
+     -0.03139668530631197,
+     0.00429561772414186
+    ],
+    "ci95": [
+     -0.03596026012577042,
+     0.006526447992689852
+    ],
+    "p_two_sided_bootstrap": 0.2548,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "COMMITTEE": {
+    "cer_difference": -0.0029557987542952746,
+    "ci90": [
+     -0.03046940411327708,
+     0.01794343155084702
+    ],
+    "ci95": [
+     -0.036214971738092266,
+     0.020457131997489057
+    ],
+    "p_two_sided_bootstrap": 0.8968,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "JEV_12M": {
+    "cer_difference": -0.012983574379096037,
+    "ci90": [
+     -0.029982748632777334,
+     -0.00048595903782276846
+    ],
+    "ci95": [
+     -0.033371781444555396,
+     0.0008980114109728199
+    ],
+    "p_two_sided_bootstrap": 0.0764,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "COMMITTEE_12M": {
+    "cer_difference": -0.01114463427519402,
+    "ci90": [
+     -0.03083431286917005,
+     0.0038758655042695814
+    ],
+    "ci95": [
+     -0.03529423626836879,
+     0.0059741333411045296
+    ],
+    "p_two_sided_bootstrap": 0.2748,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "PLACEBO": {
+    "cer_difference": -0.005093452763153469,
+    "ci90": [
+     -0.009374647719819329,
+     -0.0015517227921288362
+    ],
+    "ci95": [
+     -0.010330611491843295,
+     -0.0010123196304505392
+    ],
+    "p_two_sided_bootstrap": 0.0064,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   }
+  },
+  "vs_static_holm": {
+   "DET": {
+    "p": 0.002,
+    "holm_adjusted_p": 0.006,
+    "reject_at_alpha": true
+   },
+   "JEV": {
+    "p": 0.2548,
+    "holm_adjusted_p": 0.5096,
+    "reject_at_alpha": false
+   },
+   "COMMITTEE": {
+    "p": 0.8968,
+    "holm_adjusted_p": 0.8968,
+    "reject_at_alpha": false
+   }
+  },
+  "vs_placebo": {
+   "DET": {
+    "cer_difference": -0.00035211233641048445,
+    "ci90": [
+     -0.0009591137697199808,
+     -2.528410572874908e-05
+    ],
+    "ci95": [
+     -0.0009761544802969993,
+     -1.8554205918486935e-05
+    ],
+    "p_two_sided_bootstrap": 0.0044,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "JEV": {
+    "cer_difference": -0.006672791796130555,
+    "ci90": [
+     -0.022947523248524938,
+     0.007151549795280144
+    ],
+    "ci95": [
+     -0.026511967123155577,
+     0.009453992415483807
+    ],
+    "p_two_sided_bootstrap": 0.4852,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "COMMITTEE": {
+    "cer_difference": 0.0021376540088581947,
+    "ci90": [
+     -0.022700045634677913,
+     0.021484206728412166
+    ],
+    "ci95": [
+     -0.027796302823262762,
+     0.02397062018114317
+    ],
+    "p_two_sided_bootstrap": 0.822,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "JEV_12M": {
+    "cer_difference": -0.007890121615942568,
+    "ci90": [
+     -0.021462847937959086,
+     0.0022515464445496346
+    ],
+    "ci95": [
+     -0.02403825084694587,
+     0.003450070025961995
+    ],
+    "p_two_sided_bootstrap": 0.2772,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "COMMITTEE_12M": {
+    "cer_difference": -0.0060511815120405515,
+    "ci90": [
+     -0.022828910569668383,
+     0.006967690622005703
+    ],
+    "ci95": [
+     -0.026420057209666614,
+     0.008758264409264126
+    ],
+    "p_two_sided_bootstrap": 0.5488,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   }
+  },
+  "vs_det": {
+   "JEV": {
+    "cer_difference": -0.00632067945972007,
+    "ci90": [
+     -0.02270315172596401,
+     0.007846496055936467
+    ],
+    "ci95": [
+     -0.02642530086359479,
+     0.010213510909711001
+    ],
+    "p_two_sided_bootstrap": 0.5188,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "COMMITTEE": {
+    "cer_difference": 0.002489766345268679,
+    "ci90": [
+     -0.022447911417856164,
+     0.022029244098850365
+    ],
+    "ci95": [
+     -0.027567104584208545,
+     0.024588394572724746
+    ],
+    "p_two_sided_bootstrap": 0.8004,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "JEV_12M": {
+    "cer_difference": -0.007538009279532083,
+    "ci90": [
+     -0.021121782890173933,
+     0.0027275297031833087
+    ],
+    "ci95": [
+     -0.023775840665324753,
+     0.004075998631452344
+    ],
+    "p_two_sided_bootstrap": 0.3152,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "COMMITTEE_12M": {
+    "cer_difference": -0.005699069175630067,
+    "ci90": [
+     -0.022717234153289703,
+     0.007594415172860503
+    ],
+    "ci95": [
+     -0.026338467237579575,
+     0.009434771307212778
+    ],
+    "p_two_sided_bootstrap": 0.5768,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   }
+  },
+  "vs_det_holm": {
+   "JEV": {
+    "p": 0.5188,
+    "holm_adjusted_p": 1.0,
+    "reject_at_alpha": false
+   },
+   "COMMITTEE": {
+    "p": 0.8004,
+    "holm_adjusted_p": 1.0,
+    "reject_at_alpha": false
+   }
+  }
+ },
+ "spy60_sign": {
+  "prior_spy": 0.6,
+  "mapping": "sign",
+  "metrics": {
+   "DET": {
+    "n_months": 46,
+    "net_annualized_excess_return": 0.06260215236056545,
+    "annualized_volatility": 0.13969883534944877,
+    "net_sharpe": 0.44812222094743803,
+    "max_drawdown": -0.23979323696842247,
+    "cer_delta_2_5": 0.038207446613074944,
+    "mean_one_way_turnover_per_rebalance": 0.02684134882559829,
+    "annualized_one_way_turnover": 0.3220961859071795,
+    "total_cost": 0.001234702045977521,
+    "net_cer": 0.038207446613074944,
+    "mean_spy_weight": 0.5945921220740678,
+    "min_spy_weight": 0.5653729994337401,
+    "max_spy_weight": 0.6173234548422938
+   },
+   "JEV": {
+    "n_months": 46,
+    "net_annualized_excess_return": 0.06294571437127727,
+    "annualized_volatility": 0.13969088891843454,
+    "net_sharpe": 0.4506071574076048,
+    "max_drawdown": -0.23971298898315063,
+    "cer_delta_2_5": 0.03855378381274924,
+    "mean_one_way_turnover_per_rebalance": 0.026132064065323056,
+    "annualized_one_way_turnover": 0.31358476878387664,
+    "total_cost": 0.0012020749470048604,
+    "net_cer": 0.03855378381274924,
+    "mean_spy_weight": 0.5959353647089349,
+    "min_spy_weight": 0.5653729994337401,
+    "max_spy_weight": 0.6192442584705352
+   },
+   "COMMITTEE": {
+    "n_months": 46,
+    "net_annualized_excess_return": 0.06373390834479926,
+    "annualized_volatility": 0.13871741949007005,
+    "net_sharpe": 0.4594513694032608,
+    "max_drawdown": -0.2443516292950929,
+    "cer_delta_2_5": 0.039680755257319185,
+    "mean_one_way_turnover_per_rebalance": 0.03771905529138075,
+    "annualized_one_way_turnover": 0.45262866349656894,
+    "total_cost": 0.0017350765434035144,
+    "net_cer": 0.039680755257319185,
+    "mean_spy_weight": 0.6063525607300408,
+    "min_spy_weight": 0.5457581229111332,
+    "max_spy_weight": 0.7013427125962934
+   },
+   "JEV_12M": {
+    "n_months": 46,
+    "net_annualized_excess_return": 0.06303935449905511,
+    "annualized_volatility": 0.13969419094019903,
+    "net_sharpe": 0.45126682845417176,
+    "max_drawdown": -0.239722651109752,
+    "cer_delta_2_5": 0.038646270771009135,
+    "mean_one_way_turnover_per_rebalance": 0.02636845003408119,
+    "annualized_one_way_turnover": 0.31642140040897426,
+    "total_cost": 0.0012129487015677346,
+    "net_cer": 0.038646270771009135,
+    "mean_spy_weight": 0.5965120292213948,
+    "min_spy_weight": 0.5641143734413298,
+    "max_spy_weight": 0.6192442584705352
+   },
+   "COMMITTEE_12M": {
+    "n_months": 46,
+    "net_annualized_excess_return": 0.06315244383823247,
+    "annualized_volatility": 0.13944174176085308,
+    "net_sharpe": 0.45289482934414915,
+    "max_drawdown": -0.2396274098022264,
+    "cer_delta_2_5": 0.03884744465660692,
+    "mean_one_way_turnover_per_rebalance": 0.026508338758404786,
+    "annualized_one_way_turnover": 0.3181000651008574,
+    "total_cost": 0.00121938358288662,
+    "net_cer": 0.03884744465660692,
+    "mean_spy_weight": 0.6002846414323885,
+    "min_spy_weight": 0.5632758696186368,
+    "max_spy_weight": 0.6740631962566817
+   },
+   "PLACEBO": {
+    "n_months": 46,
+    "net_annualized_excess_return": 0.06295509034571146,
+    "annualized_volatility": 0.13970119941138956,
+    "net_sharpe": 0.4506410153310313,
+    "max_drawdown": -0.23971298898315063,
+    "cer_delta_2_5": 0.03855955894948543,
+    "mean_one_way_turnover_per_rebalance": 0.026228597269014914,
+    "annualized_one_way_turnover": 0.31474316722817897,
+    "total_cost": 0.0012065154743746856,
+    "net_cer": 0.03855955894948543,
+    "mean_spy_weight": 0.5956970546116083,
+    "min_spy_weight": 0.5653729994337401,
+    "max_spy_weight": 0.6192442584705352
+   },
+   "STATIC": {
+    "n_months": 46,
+    "net_annualized_excess_return": 0.06803863436955201,
+    "annualized_volatility": 0.13967282529372166,
+    "net_sharpe": 0.4871286467247425,
+    "max_drawdown": -0.23962165840052052,
+    "cer_delta_2_5": 0.0436530117126389,
+    "mean_one_way_turnover_per_rebalance": 0.025145175747231456,
+    "annualized_one_way_turnover": 0.30174210896677744,
+    "total_cost": 0.001156678084372647,
+    "net_cer": 0.0436530117126389,
+    "mean_spy_weight": 0.6000000000000002,
+    "min_spy_weight": 0.6,
+    "max_spy_weight": 0.6
+   }
+  },
+  "vs_static": {
+   "DET": {
+    "cer_difference": -0.005445565099563954,
+    "ci90": [
+     -0.009596462419928316,
+     -0.001983056319650088
+    ],
+    "ci95": [
+     -0.010485288453109153,
+     -0.0014762500453327015
+    ],
+    "p_two_sided_bootstrap": 0.002,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "JEV": {
+    "cer_difference": -0.005099227899889661,
+    "ci90": [
+     -0.009374647719819329,
+     -0.0015659842647216511
+    ],
+    "ci95": [
+     -0.010333259628804055,
+     -0.0010090363902488725
+    ],
+    "p_two_sided_bootstrap": 0.0064,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "COMMITTEE": {
+    "cer_difference": -0.003972256455319713,
+    "ci90": [
+     -0.009755055807005303,
+     0.0017578323868457436
+    ],
+    "ci95": [
+     -0.010923627900811849,
+     0.0027611431602121545
+    ],
+    "p_two_sided_bootstrap": 0.2476,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "JEV_12M": {
+    "cer_difference": -0.005006740941629763,
+    "ci90": [
+     -0.009427158997169149,
+     -0.00135703769839679
+    ],
+    "ci95": [
+     -0.010356781594698512,
+     -0.000782996518899404
+    ],
+    "p_two_sided_bootstrap": 0.0132,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "COMMITTEE_12M": {
+    "cer_difference": -0.004805567056031974,
+    "ci90": [
+     -0.009432021621753791,
+     -0.0008987940264811197
+    ],
+    "ci95": [
+     -0.010358578895859418,
+     -0.00032229010932243395
+    ],
+    "p_two_sided_bootstrap": 0.0324,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "PLACEBO": {
+    "cer_difference": -0.005093452763153469,
+    "ci90": [
+     -0.009374647719819329,
+     -0.0015517227921288362
+    ],
+    "ci95": [
+     -0.010330611491843295,
+     -0.0010123196304505392
+    ],
+    "p_two_sided_bootstrap": 0.0064,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   }
+  },
+  "vs_static_holm": {
+   "DET": {
+    "p": 0.002,
+    "holm_adjusted_p": 0.006,
+    "reject_at_alpha": true
+   },
+   "JEV": {
+    "p": 0.0064,
+    "holm_adjusted_p": 0.0128,
+    "reject_at_alpha": true
+   },
+   "COMMITTEE": {
+    "p": 0.2476,
+    "holm_adjusted_p": 0.2476,
+    "reject_at_alpha": false
+   }
+  },
+  "vs_placebo": {
+   "DET": {
+    "cer_difference": -0.00035211233641048445,
+    "ci90": [
+     -0.0009591137697199808,
+     -2.528410572874908e-05
+    ],
+    "ci95": [
+     -0.0009761544802969993,
+     -1.8554205918486935e-05
+    ],
+    "p_two_sided_bootstrap": 0.0044,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "JEV": {
+    "cer_difference": -5.775136736191344e-06,
+    "ci90": [
+     -6.144335794811412e-05,
+     4.8373286248908426e-05
+    ],
+    "ci95": [
+     -7.47016097884294e-05,
+     5.251501303242116e-05
+    ],
+    "p_two_sided_bootstrap": 0.942,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "COMMITTEE": {
+    "cer_difference": 0.0011211963078337564,
+    "ci90": [
+     -0.004838643142448668,
+     0.0072862897322163184
+    ],
+    "ci95": [
+     -0.005925996270429227,
+     0.00849102384952281
+    ],
+    "p_two_sided_bootstrap": 0.808,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "JEV_12M": {
+    "cer_difference": 8.671182152370643e-05,
+    "ci90": [
+     -0.00014866417433572962,
+     0.0003916506103202919
+    ],
+    "ci95": [
+     -0.0001758100058945892,
+     0.00045824478459102015
+    ],
+    "p_two_sided_bootstrap": 0.7348,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "COMMITTEE_12M": {
+    "cer_difference": 0.0002878857071214949,
+    "ci90": [
+     -0.000701652345647424,
+     0.0013148947652801524
+    ],
+    "ci95": [
+     -0.0008235140295160968,
+     0.0015357148308875245
+    ],
+    "p_two_sided_bootstrap": 0.6084,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   }
+  },
+  "vs_det": {
+   "JEV": {
+    "cer_difference": 0.0003463371996742931,
+    "ci90": [
+     2.3875072779597217e-05,
+     0.0008946220079025044
+    ],
+    "ci95": [
+     1.6830759801035253e-05,
+     0.0009551846120358943
+    ],
+    "p_two_sided_bootstrap": 0.0044,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "COMMITTEE": {
+    "cer_difference": 0.0014733086442442409,
+    "ci90": [
+     -0.004365021362660562,
+     0.0074866439124876465
+    ],
+    "ci95": [
+     -0.005500505934695875,
+     0.008761935984602414
+    ],
+    "p_two_sided_bootstrap": 0.734,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "JEV_12M": {
+    "cer_difference": 0.0004388241579341909,
+    "ci90": [
+     -5.360269524472411e-05,
+     0.0010465048886055066
+    ],
+    "ci95": [
+     -8.626906269984108e-05,
+     0.0011842390920917738
+    ],
+    "p_two_sided_bootstrap": 0.2196,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "COMMITTEE_12M": {
+    "cer_difference": 0.0006399980435319794,
+    "ci90": [
+     -0.00020719191377544847,
+     0.0017222630628243433
+    ],
+    "ci95": [
+     -0.00038092812468153164,
+     0.0020064020125943275
+    ],
+    "p_two_sided_bootstrap": 0.2748,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   }
+  },
+  "vs_det_holm": {
+   "JEV": {
+    "p": 0.0044,
+    "holm_adjusted_p": 0.0088,
+    "reject_at_alpha": true
+   },
+   "COMMITTEE": {
+    "p": 0.734,
+    "holm_adjusted_p": 0.734,
+    "reject_at_alpha": false
+   }
+  }
+ },
+ "spy50_ridge": {
+  "prior_spy": 0.5,
+  "mapping": "ridge",
+  "metrics": {
+   "DET": {
+    "n_months": 46,
+    "net_annualized_excess_return": 0.05034772866153295,
+    "annualized_volatility": 0.13068139613351482,
+    "net_sharpe": 0.3852708201104125,
+    "max_drawdown": -0.24883775555406795,
+    "cer_delta_2_5": 0.02900069454227716,
+    "mean_one_way_turnover_per_rebalance": 0.02735341746367195,
+    "annualized_one_way_turnover": 0.3282410095640634,
+    "total_cost": 0.0012582572033289102,
+    "net_cer": 0.02900069454227716,
+    "mean_spy_weight": 0.5049924724135473,
+    "min_spy_weight": 0.4750595538007424,
+    "max_spy_weight": 0.5267105664198202
+   },
+   "JEV": {
+    "n_months": 46,
+    "net_annualized_excess_return": 0.046238837855081746,
+    "annualized_volatility": 0.1356876857444782,
+    "net_sharpe": 0.3407740179323047,
+    "max_drawdown": -0.2533915441950828,
+    "cer_delta_2_5": 0.0232249027767164,
+    "mean_one_way_turnover_per_rebalance": 0.057337418268586925,
+    "annualized_one_way_turnover": 0.6880490192230431,
+    "total_cost": 0.002637521240354999,
+    "net_cer": 0.0232249027767164,
+    "mean_spy_weight": 0.5104683769705661,
+    "min_spy_weight": 0.3846827374047056,
+    "max_spy_weight": 0.679054691554599
+   },
+   "COMMITTEE": {
+    "n_months": 46,
+    "net_annualized_excess_return": 0.05919335534729261,
+    "annualized_volatility": 0.14651101685744058,
+    "net_sharpe": 0.40401982469952713,
+    "max_drawdown": -0.2480149743451271,
+    "cer_delta_2_5": 0.03236150777154106,
+    "mean_one_way_turnover_per_rebalance": 0.09052925606838806,
+    "annualized_one_way_turnover": 1.0863510728206567,
+    "total_cost": 0.00416434577914585,
+    "net_cer": 0.03236150777154106,
+    "mean_spy_weight": 0.5429720293732617,
+    "min_spy_weight": 0.39906808716651226,
+    "max_spy_weight": 0.7
+   },
+   "JEV_12M": {
+    "n_months": 46,
+    "net_annualized_excess_return": 0.04560406080256753,
+    "annualized_volatility": 0.13726604320490998,
+    "net_sharpe": 0.33223118943182506,
+    "max_drawdown": -0.25215486445630886,
+    "cer_delta_2_5": 0.022051602531152265,
+    "mean_one_way_turnover_per_rebalance": 0.043663208121055834,
+    "annualized_one_way_turnover": 0.52395849745267,
+    "total_cost": 0.002008507573568568,
+    "net_cer": 0.022051602531152265,
+    "mean_spy_weight": 0.5069826474812142,
+    "min_spy_weight": 0.46462330871341734,
+    "max_spy_weight": 0.6242609868096914
+   },
+   "COMMITTEE_12M": {
+    "n_months": 46,
+    "net_annualized_excess_return": 0.050206759561786024,
+    "annualized_volatility": 0.14449796742855997,
+    "net_sharpe": 0.3474565106710468,
+    "max_drawdown": -0.25069375828685037,
+    "cer_delta_2_5": 0.02410718132305455,
+    "mean_one_way_turnover_per_rebalance": 0.06790713273881399,
+    "annualized_one_way_turnover": 0.8148855928657679,
+    "total_cost": 0.003123728105985445,
+    "net_cer": 0.02410718132305455,
+    "mean_spy_weight": 0.5273520574620459,
+    "min_spy_weight": 0.3967097641012709,
+    "max_spy_weight": 0.7
+   },
+   "PLACEBO": {
+    "n_months": 46,
+    "net_annualized_excess_return": 0.05070018851582226,
+    "annualized_volatility": 0.1306820433853528,
+    "net_sharpe": 0.38796599136668286,
+    "max_drawdown": -0.2487519054166748,
+    "cer_delta_2_5": 0.02935294293660822,
+    "mean_one_way_turnover_per_rebalance": 0.02675751797825391,
+    "annualized_one_way_turnover": 0.32109021573904695,
+    "total_cost": 0.0012308458269996796,
+    "net_cer": 0.02935294293660822,
+    "mean_spy_weight": 0.50609636973007,
+    "min_spy_weight": 0.4750595538007424,
+    "max_spy_weight": 0.5284980024275512
+   },
+   "STATIC": {
+    "n_months": 46,
+    "net_annualized_excess_return": 0.05419934109504944,
+    "annualized_volatility": 0.12995127653214014,
+    "net_sharpe": 0.417074326173661,
+    "max_drawdown": -0.2504092450662543,
+    "cer_delta_2_5": 0.03309017325463349,
+    "mean_one_way_turnover_per_rebalance": 0.025730073853276143,
+    "annualized_one_way_turnover": 0.30876088623931375,
+    "total_cost": 0.0011835833972507026,
+    "net_cer": 0.03309017325463349,
+    "mean_spy_weight": 0.5,
+    "min_spy_weight": 0.5,
+    "max_spy_weight": 0.5
+   }
+  },
+  "vs_static": {
+   "DET": {
+    "cer_difference": -0.004089478712356327,
+    "ci90": [
+     -0.008925602195496027,
+     -0.00021755668703446506
+    ],
+    "ci95": [
+     -0.010025289771479814,
+     0.00018460529052748156
+    ],
+    "p_two_sided_bootstrap": 0.0716,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "JEV": {
+    "cer_difference": -0.009865270477917087,
+    "ci90": [
+     -0.03004274062016249,
+     0.006014437750224819
+    ],
+    "ci95": [
+     -0.03429479269311618,
+     0.00827456795577394
+    ],
+    "p_two_sided_bootstrap": 0.3744,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "COMMITTEE": {
+    "cer_difference": -0.0007286654830924305,
+    "ci90": [
+     -0.028411643126770848,
+     0.020331638616567237
+    ],
+    "ci95": [
+     -0.034102015935220574,
+     0.022587330678518494
+    ],
+    "p_two_sided_bootstrap": 0.9748,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "JEV_12M": {
+    "cer_difference": -0.011038570723481224,
+    "ci90": [
+     -0.02858623289283661,
+     0.001317251924451215
+    ],
+    "ci95": [
+     -0.031816497696640245,
+     0.002434842651102788
+    ],
+    "p_two_sided_bootstrap": 0.1856,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "COMMITTEE_12M": {
+    "cer_difference": -0.008982991931578938,
+    "ci90": [
+     -0.028936007727323396,
+     0.005983181663162728
+    ],
+    "ci95": [
+     -0.033328784779485636,
+     0.007918149197774723
+    ],
+    "p_two_sided_bootstrap": 0.4276,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "PLACEBO": {
+    "cer_difference": -0.003737230318025267,
+    "ci90": [
+     -0.008652282528362237,
+     0.0001155250457397361
+    ],
+    "ci95": [
+     -0.009843233039025033,
+     0.0005149364047116814
+    ],
+    "p_two_sided_bootstrap": 0.1192,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   }
+  },
+  "vs_static_holm": {
+   "DET": {
+    "p": 0.0716,
+    "holm_adjusted_p": 0.2148,
+    "reject_at_alpha": false
+   },
+   "JEV": {
+    "p": 0.3744,
+    "holm_adjusted_p": 0.7488,
+    "reject_at_alpha": false
+   },
+   "COMMITTEE": {
+    "p": 0.9748,
+    "holm_adjusted_p": 0.9748,
+    "reject_at_alpha": false
+   }
+  },
+  "vs_placebo": {
+   "DET": {
+    "cer_difference": -0.0003522483943310603,
+    "ci90": [
+     -0.0009625260606636987,
+     -2.5014866906284874e-05
+    ],
+    "ci95": [
+     -0.0009785704832095483,
+     -1.8456830664574083e-05
+    ],
+    "p_two_sided_bootstrap": 0.0044,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "JEV": {
+    "cer_difference": -0.00612804015989182,
+    "ci90": [
+     -0.021743277327973334,
+     0.007307680590535634
+    ],
+    "ci95": [
+     -0.02511405369770433,
+     0.00962338864773077
+    ],
+    "p_two_sided_bootstrap": 0.5032,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "COMMITTEE": {
+    "cer_difference": 0.0030085648349328364,
+    "ci90": [
+     -0.020687740254966704,
+     0.02162471273617876
+    ],
+    "ci95": [
+     -0.02549181140403497,
+     0.023970225277684633
+    ],
+    "p_two_sided_bootstrap": 0.7644,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "JEV_12M": {
+    "cer_difference": -0.007301340405455957,
+    "ci90": [
+     -0.019884975507015987,
+     0.002366141354188586
+    ],
+    "ci95": [
+     -0.022509621116619385,
+     0.0035957888515203832
+    ],
+    "p_two_sided_bootstrap": 0.2868,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "COMMITTEE_12M": {
+    "cer_difference": -0.005245761613553671,
+    "ci90": [
+     -0.021214733155183216,
+     0.00722702487126021
+    ],
+    "ci95": [
+     -0.024719818185828538,
+     0.009070783461894215
+    ],
+    "p_two_sided_bootstrap": 0.5844,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   }
+  },
+  "vs_det": {
+   "JEV": {
+    "cer_difference": -0.0057757917655607595,
+    "ci90": [
+     -0.02164344330811924,
+     0.008037095513671474
+    ],
+    "ci95": [
+     -0.02499163402564611,
+     0.010333914797885497
+    ],
+    "p_two_sided_bootstrap": 0.542,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "COMMITTEE": {
+    "cer_difference": 0.0033608132292638968,
+    "ci90": [
+     -0.020528941389646324,
+     0.022052563527524015
+    ],
+    "ci95": [
+     -0.025351756806724253,
+     0.02447503307087263
+    ],
+    "p_two_sided_bootstrap": 0.7492,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "JEV_12M": {
+    "cer_difference": -0.006949092011124897,
+    "ci90": [
+     -0.019640125944639177,
+     0.0028030346939117872
+    ],
+    "ci95": [
+     -0.022201071479523746,
+     0.004136039928829688
+    ],
+    "p_two_sided_bootstrap": 0.3256,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "COMMITTEE_12M": {
+    "cer_difference": -0.004893513219222611,
+    "ci90": [
+     -0.021011424853660303,
+     0.007855111170055518
+    ],
+    "ci95": [
+     -0.024557303579932282,
+     0.009721058586673775
+    ],
+    "p_two_sided_bootstrap": 0.618,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   }
+  },
+  "vs_det_holm": {
+   "JEV": {
+    "p": 0.542,
+    "holm_adjusted_p": 1.0,
+    "reject_at_alpha": false
+   },
+   "COMMITTEE": {
+    "p": 0.7492,
+    "holm_adjusted_p": 1.0,
+    "reject_at_alpha": false
+   }
+  }
+ },
+ "spy50_sign": {
+  "prior_spy": 0.5,
+  "mapping": "sign",
+  "metrics": {
+   "DET": {
+    "n_months": 46,
+    "net_annualized_excess_return": 0.05034772866153295,
+    "annualized_volatility": 0.13068139613351482,
+    "net_sharpe": 0.3852708201104125,
+    "max_drawdown": -0.24883775555406795,
+    "cer_delta_2_5": 0.02900069454227716,
+    "mean_one_way_turnover_per_rebalance": 0.02735341746367195,
+    "annualized_one_way_turnover": 0.3282410095640634,
+    "total_cost": 0.0012582572033289102,
+    "net_cer": 0.02900069454227716,
+    "mean_spy_weight": 0.5049924724135473,
+    "min_spy_weight": 0.4750595538007424,
+    "max_spy_weight": 0.5267105664198202
+   },
+   "JEV": {
+    "n_months": 46,
+    "net_annualized_excess_return": 0.050690779370942324,
+    "annualized_volatility": 0.1306656851183501,
+    "net_sharpe": 0.38794255220893903,
+    "max_drawdown": -0.2486125501770572,
+    "cer_delta_2_5": 0.029348877786632543,
+    "mean_one_way_turnover_per_rebalance": 0.026662541009149908,
+    "annualized_one_way_turnover": 0.31995049210979887,
+    "total_cost": 0.0012264768864208957,
+    "net_cer": 0.029348877786632543,
+    "mean_spy_weight": 0.5063346350020619,
+    "min_spy_weight": 0.4750595538007424,
+    "max_spy_weight": 0.5284980024275512
+   },
+   "COMMITTEE": {
+    "n_months": 46,
+    "net_annualized_excess_return": 0.051491549601709916,
+    "annualized_volatility": 0.12966590997907632,
+    "net_sharpe": 0.39710938372328475,
+    "max_drawdown": -0.24821691774465426,
+    "cer_delta_2_5": 0.03047498933833251,
+    "mean_one_way_turnover_per_rebalance": 0.03773907780992993,
+    "annualized_one_way_turnover": 0.45286893371915915,
+    "total_cost": 0.001735997579256777,
+    "net_cer": 0.03047498933833251,
+    "mean_spy_weight": 0.5167743140083578,
+    "min_spy_weight": 0.4554471133311361,
+    "max_spy_weight": 0.6130750403684708
+   },
+   "JEV_12M": {
+    "n_months": 46,
+    "net_annualized_excess_return": 0.05078420107061181,
+    "annualized_volatility": 0.13065458103321842,
+    "net_sharpe": 0.3886905508326579,
+    "max_drawdown": -0.24815500569743165,
+    "cer_delta_2_5": 0.029445926639404523,
+    "mean_one_way_turnover_per_rebalance": 0.026903378306328312,
+    "annualized_one_way_turnover": 0.32284053967593973,
+    "total_cost": 0.0012375554020911028,
+    "net_cer": 0.029445926639404523,
+    "mean_spy_weight": 0.5069110981015005,
+    "min_spy_weight": 0.473800927808332,
+    "max_spy_weight": 0.5284980024275512
+   },
+   "COMMITTEE_12M": {
+    "n_months": 46,
+    "net_annualized_excess_return": 0.050898814937065245,
+    "annualized_volatility": 0.13029220947773884,
+    "net_sharpe": 0.3906512533718418,
+    "max_drawdown": -0.2458543504037467,
+    "cer_delta_2_5": 0.029678740123826514,
+    "mean_one_way_turnover_per_rebalance": 0.026872708691281975,
+    "annualized_one_way_turnover": 0.3224725042953837,
+    "total_cost": 0.001236144599798971,
+    "net_cer": 0.029678740123826514,
+    "mean_spy_weight": 0.5106827098137,
+    "min_spy_weight": 0.4729624239856391,
+    "max_spy_weight": 0.5842701760286235
+   },
+   "PLACEBO": {
+    "n_months": 46,
+    "net_annualized_excess_return": 0.05070018851582226,
+    "annualized_volatility": 0.1306820433853528,
+    "net_sharpe": 0.38796599136668286,
+    "max_drawdown": -0.2487519054166748,
+    "cer_delta_2_5": 0.02935294293660822,
+    "mean_one_way_turnover_per_rebalance": 0.02675751797825391,
+    "annualized_one_way_turnover": 0.32109021573904695,
+    "total_cost": 0.0012308458269996796,
+    "net_cer": 0.02935294293660822,
+    "mean_spy_weight": 0.50609636973007,
+    "min_spy_weight": 0.4750595538007424,
+    "max_spy_weight": 0.5284980024275512
+   },
+   "STATIC": {
+    "n_months": 46,
+    "net_annualized_excess_return": 0.05419934109504944,
+    "annualized_volatility": 0.12995127653214014,
+    "net_sharpe": 0.417074326173661,
+    "max_drawdown": -0.2504092450662543,
+    "cer_delta_2_5": 0.03309017325463349,
+    "mean_one_way_turnover_per_rebalance": 0.025730073853276143,
+    "annualized_one_way_turnover": 0.30876088623931375,
+    "total_cost": 0.0011835833972507026,
+    "net_cer": 0.03309017325463349,
+    "mean_spy_weight": 0.5,
+    "min_spy_weight": 0.5,
+    "max_spy_weight": 0.5
+   }
+  },
+  "vs_static": {
+   "DET": {
+    "cer_difference": -0.004089478712356327,
+    "ci90": [
+     -0.008925602195496027,
+     -0.00021755668703446506
+    ],
+    "ci95": [
+     -0.010025289771479814,
+     0.00018460529052748156
+    ],
+    "p_two_sided_bootstrap": 0.0716,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "JEV": {
+    "cer_difference": -0.0037412954680009457,
+    "ci90": [
+     -0.008662446342397833,
+     0.00012696041999813484
+    ],
+    "ci95": [
+     -0.009823089441334648,
+     0.0005193667935602729
+    ],
+    "p_two_sided_bootstrap": 0.1192,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "COMMITTEE": {
+    "cer_difference": -0.0026151839163009796,
+    "ci90": [
+     -0.009332264253253017,
+     0.004043955804111993
+    ],
+    "ci95": [
+     -0.010385666471978926,
+     0.005187317595517743
+    ],
+    "p_two_sided_bootstrap": 0.494,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "JEV_12M": {
+    "cer_difference": -0.0036442466152289653,
+    "ci90": [
+     -0.008679870585005986,
+     0.0003707084094108818
+    ],
+    "ci95": [
+     -0.009868502199459625,
+     0.0008077422432796653
+    ],
+    "p_two_sided_bootstrap": 0.1512,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "COMMITTEE_12M": {
+    "cer_difference": -0.003411433130806975,
+    "ci90": [
+     -0.008668253998882595,
+     0.0008954669182726602
+    ],
+    "ci95": [
+     -0.009870204175383474,
+     0.0014692825264343554
+    ],
+    "p_two_sided_bootstrap": 0.22,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "PLACEBO": {
+    "cer_difference": -0.003737230318025267,
+    "ci90": [
+     -0.008652282528362237,
+     0.0001155250457397361
+    ],
+    "ci95": [
+     -0.009843233039025033,
+     0.0005149364047116814
+    ],
+    "p_two_sided_bootstrap": 0.1192,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   }
+  },
+  "vs_static_holm": {
+   "DET": {
+    "p": 0.0716,
+    "holm_adjusted_p": 0.2148,
+    "reject_at_alpha": false
+   },
+   "JEV": {
+    "p": 0.1192,
+    "holm_adjusted_p": 0.2384,
+    "reject_at_alpha": false
+   },
+   "COMMITTEE": {
+    "p": 0.494,
+    "holm_adjusted_p": 0.494,
+    "reject_at_alpha": false
+   }
+  },
+  "vs_placebo": {
+   "DET": {
+    "cer_difference": -0.0003522483943310603,
+    "ci90": [
+     -0.0009625260606636987,
+     -2.5014866906284874e-05
+    ],
+    "ci95": [
+     -0.0009785704832095483,
+     -1.8456830664574083e-05
+    ],
+    "p_two_sided_bootstrap": 0.0044,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "JEV": {
+    "cer_difference": -4.065149975678722e-06,
+    "ci90": [
+     -5.9332459277042227e-05,
+     4.9520369274697484e-05
+    ],
+    "ci95": [
+     -7.382689060610737e-05,
+     5.4095831014726565e-05
+    ],
+    "p_two_sided_bootstrap": 0.9568,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "COMMITTEE": {
+    "cer_difference": 0.0011220464017242873,
+    "ci90": [
+     -0.004826468395161714,
+     0.007298198477984024
+    ],
+    "ci95": [
+     -0.0059494715517616585,
+     0.008503333301936089
+    ],
+    "p_two_sided_bootstrap": 0.8104,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "JEV_12M": {
+    "cer_difference": 9.298370279630166e-05,
+    "ci90": [
+     -0.0001508320477076386,
+     0.0004089337026355042
+    ],
+    "ci95": [
+     -0.00017494151320330054,
+     0.0004762400063856274
+    ],
+    "p_two_sided_bootstrap": 0.7272,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "COMMITTEE_12M": {
+    "cer_difference": 0.00032579718721829215,
+    "ci90": [
+     -0.0006871648285776133,
+     0.0013853199664856793
+    ],
+    "ci95": [
+     -0.0008067603838488363,
+     0.0016301789226123564
+    ],
+    "p_two_sided_bootstrap": 0.5892,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   }
+  },
+  "vs_det": {
+   "JEV": {
+    "cer_difference": 0.0003481832443553816,
+    "ci90": [
+     2.4559303556815487e-05,
+     0.0009011653647851836
+    ],
+    "ci95": [
+     1.7329836345849475e-05,
+     0.0009597363483318719
+    ],
+    "p_two_sided_bootstrap": 0.0044,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "COMMITTEE": {
+    "cer_difference": 0.0014742947960553476,
+    "ci90": [
+     -0.004381337955435098,
+     0.007505065872594943
+    ],
+    "ci95": [
+     -0.0055213146145106536,
+     0.008823759759899389
+    ],
+    "p_two_sided_bootstrap": 0.7412,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "JEV_12M": {
+    "cer_difference": 0.000445232097127362,
+    "ci90": [
+     -5.434337711935147e-05,
+     0.0010590736900278478
+    ],
+    "ci95": [
+     -8.699278527235441e-05,
+     0.0011970650564248327
+    ],
+    "p_two_sided_bootstrap": 0.22,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "COMMITTEE_12M": {
+    "cer_difference": 0.0006780455815493525,
+    "ci90": [
+     -0.0001951120060261876,
+     0.001797559765239112
+    ],
+    "ci95": [
+     -0.00036615067183536667,
+     0.0020856602225568554
+    ],
+    "p_two_sided_bootstrap": 0.2652,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   }
+  },
+  "vs_det_holm": {
+   "JEV": {
+    "p": 0.0044,
+    "holm_adjusted_p": 0.0088,
+    "reject_at_alpha": true
+   },
+   "COMMITTEE": {
+    "p": 0.7412,
+    "holm_adjusted_p": 0.7412,
+    "reject_at_alpha": false
+   }
+  }
+ },
+ "spy70_ridge": {
+  "prior_spy": 0.7,
+  "mapping": "ridge",
+  "metrics": {
+   "DET": {
+    "n_months": 46,
+    "net_annualized_excess_return": 0.07486768220562197,
+    "annualized_volatility": 0.15219420699969374,
+    "net_sharpe": 0.491922023062104,
+    "max_drawdown": -0.23598142253455312,
+    "cer_delta_2_5": 0.045913836400289926,
+    "mean_one_way_turnover_per_rebalance": 0.02540376801886014,
+    "annualized_one_way_turnover": 0.30484521622632166,
+    "total_cost": 0.001168573328867566,
+    "net_cer": 0.045913836400289926,
+    "mean_spy_weight": 0.6841917717345884,
+    "min_spy_weight": 0.655686445066738,
+    "max_spy_weight": 0.7079363432647674
+   },
+   "JEV": {
+    "n_months": 46,
+    "net_annualized_excess_return": 0.07077504284832374,
+    "annualized_volatility": 0.1593216058352567,
+    "net_sharpe": 0.4442275263124529,
+    "max_drawdown": -0.24061659241123712,
+    "cer_delta_2_5": 0.03904582524091762,
+    "mean_one_way_turnover_per_rebalance": 0.05552814757620081,
+    "annualized_one_way_turnover": 0.6663377709144097,
+    "total_cost": 0.002554294788505238,
+    "net_cer": 0.03904582524091762,
+    "mean_spy_weight": 0.6896019981177557,
+    "min_spy_weight": 0.5657675337148884,
+    "max_spy_weight": 0.8600616501790963
+   },
+   "COMMITTEE": {
+    "n_months": 46,
+    "net_annualized_excess_return": 0.08497006959727338,
+    "annualized_volatility": 0.17310044532406088,
+    "net_sharpe": 0.49087146736220777,
+    "max_drawdown": -0.24081242519866208,
+    "cer_delta_2_5": 0.04751536438303815,
+    "mean_one_way_turnover_per_rebalance": 0.09089383410486103,
+    "annualized_one_way_turnover": 1.0907260092583324,
+    "total_cost": 0.004181116368823607,
+    "net_cer": 0.04751536438303815,
+    "mean_spy_weight": 0.7232240834559498,
+    "min_spy_weight": 0.5757915084075267,
+    "max_spy_weight": 0.9000000000000001
+   },
+   "JEV_12M": {
+    "n_months": 46,
+    "net_annualized_excess_return": 0.07014452528934165,
+    "annualized_volatility": 0.16088839810056052,
+    "net_sharpe": 0.43598249542828454,
+    "max_drawdown": -0.23693845387069823,
+    "cer_delta_2_5": 0.03778817948513608,
+    "mean_one_way_turnover_per_rebalance": 0.04175493636478973,
+    "annualized_one_way_turnover": 0.5010592363774768,
+    "total_cost": 0.001920727072780328,
+    "net_cer": 0.03778817948513608,
+    "mean_spy_weight": 0.6860711355342336,
+    "min_spy_weight": 0.642774186055572,
+    "max_spy_weight": 0.8053543973604329
+   },
+   "COMMITTEE_12M": {
+    "n_months": 46,
+    "net_annualized_excess_return": 0.07539511794808543,
+    "annualized_volatility": 0.16971549776713651,
+    "net_sharpe": 0.4442441553070991,
+    "max_drawdown": -0.2420474722422029,
+    "cer_delta_2_5": 0.03939093022015177,
+    "mean_one_way_turnover_per_rebalance": 0.0667133103869054,
+    "annualized_one_way_turnover": 0.8005597246428647,
+    "total_cost": 0.003068812277797649,
+    "net_cer": 0.03939093022015177,
+    "mean_spy_weight": 0.7064727908631319,
+    "min_spy_weight": 0.5773227640886667,
+    "max_spy_weight": 0.9
+   },
+   "PLACEBO": {
+    "n_months": 46,
+    "net_annualized_excess_return": 0.07522128967255097,
+    "annualized_volatility": 0.15219794990394378,
+    "net_sharpe": 0.4942332647714713,
+    "max_drawdown": -0.23590077572889068,
+    "cer_delta_2_5": 0.046266019728846745,
+    "mean_one_way_turnover_per_rebalance": 0.02475821848058318,
+    "annualized_one_way_turnover": 0.29709862176699814,
+    "total_cost": 0.0011388780501068263,
+    "net_cer": 0.046266019728846745,
+    "mean_spy_weight": 0.6852977394931464,
+    "min_spy_weight": 0.655686445066738,
+    "max_spy_weight": 0.709990514513519
+   },
+   "STATIC": {
+    "n_months": 46,
+    "net_annualized_excess_return": 0.08189216808572979,
+    "annualized_volatility": 0.15368662425404758,
+    "net_sharpe": 0.5328516289768986,
+    "max_drawdown": -0.2353647624392099,
+    "cer_delta_2_5": 0.05236769499247376,
+    "mean_one_way_turnover_per_rebalance": 0.023373574168251032,
+    "annualized_one_way_turnover": 0.2804828900190124,
+    "total_cost": 0.0010751844117395473,
+    "net_cer": 0.05236769499247376,
+    "mean_spy_weight": 0.7,
+    "min_spy_weight": 0.7,
+    "max_spy_weight": 0.7
+   }
+  },
+  "vs_static": {
+   "DET": {
+    "cer_difference": -0.0064538585921838365,
+    "ci90": [
+     -0.01090799274381904,
+     -0.0027734895191963154
+    ],
+    "ci95": [
+     -0.011857241923045166,
+     -0.0021311422355609465
+    ],
+    "p_two_sided_bootstrap": 0.0,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "JEV": {
+    "cer_difference": -0.013321869751556144,
+    "ci90": [
+     -0.03241925131742764,
+     0.002867131448527644
+    ],
+    "ci95": [
+     -0.037022003504663954,
+     0.005482496747741437
+    ],
+    "p_two_sided_bootstrap": 0.1908,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "COMMITTEE": {
+    "cer_difference": -0.004852330609435615,
+    "ci90": [
+     -0.032028466928755515,
+     0.016002231344207973
+    ],
+    "ci95": [
+     -0.03789732304198211,
+     0.018658051069887868
+    ],
+    "p_two_sided_bootstrap": 0.7992,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "JEV_12M": {
+    "cer_difference": -0.01457951550733768,
+    "ci90": [
+     -0.03101431639454216,
+     -0.0018643649102146175
+    ],
+    "ci95": [
+     -0.034432327194617585,
+     -0.0003500623912878475
+    ],
+    "p_two_sided_bootstrap": 0.0432,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "COMMITTEE_12M": {
+    "cer_difference": -0.012976764772321993,
+    "ci90": [
+     -0.03224955918991344,
+     0.0022463815277416876
+    ],
+    "ci95": [
+     -0.03665995817399336,
+     0.004183708790783358
+    ],
+    "p_two_sided_bootstrap": 0.178,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "PLACEBO": {
+    "cer_difference": -0.006101675263627017,
+    "ci90": [
+     -0.010696078636935,
+     -0.002260201578966921
+    ],
+    "ci95": [
+     -0.011652326245849547,
+     -0.0015769085860480234
+    ],
+    "p_two_sided_bootstrap": 0.0012,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   }
+  },
+  "vs_static_holm": {
+   "DET": {
+    "p": 0.0,
+    "holm_adjusted_p": 0.0,
+    "reject_at_alpha": true
+   },
+   "JEV": {
+    "p": 0.1908,
+    "holm_adjusted_p": 0.3816,
+    "reject_at_alpha": false
+   },
+   "COMMITTEE": {
+    "p": 0.7992,
+    "holm_adjusted_p": 0.7992,
+    "reject_at_alpha": false
+   }
+  },
+  "vs_placebo": {
+   "DET": {
+    "cer_difference": -0.0003521833285568196,
+    "ci90": [
+     -0.0009566780625568621,
+     -2.5398001040701972e-05
+    ],
+    "ci95": [
+     -0.0009741630409201261,
+     -1.8810310441865998e-05
+    ],
+    "p_two_sided_bootstrap": 0.0044,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "JEV": {
+    "cer_difference": -0.007220194487929127,
+    "ci90": [
+     -0.02419086836714791,
+     0.006972781121447925
+    ],
+    "ci95": [
+     -0.02795590385482198,
+     0.009352731775037917
+    ],
+    "p_two_sided_bootstrap": 0.4712,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "COMMITTEE": {
+    "cer_difference": 0.001249344654191402,
+    "ci90": [
+     -0.024825742825331766,
+     0.021394970480236655
+    ],
+    "ci95": [
+     -0.03014817849229144,
+     0.024041735863047517
+    ],
+    "p_two_sided_bootstrap": 0.8764,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "JEV_12M": {
+    "cer_difference": -0.008477840243710663,
+    "ci90": [
+     -0.023023928943631564,
+     0.0021978103596913033
+    ],
+    "ci95": [
+     -0.02570819604721663,
+     0.0034365759727228596
+    ],
+    "p_two_sided_bootstrap": 0.2632,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "COMMITTEE_12M": {
+    "cer_difference": -0.006875089508694976,
+    "ci90": [
+     -0.024476707897363892,
+     0.006683512159299427
+    ],
+    "ci95": [
+     -0.02816817113746962,
+     0.008433973876484757
+    ],
+    "p_two_sided_bootstrap": 0.508,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   }
+  },
+  "vs_det": {
+   "JEV": {
+    "cer_difference": -0.006868011159372307,
+    "ci90": [
+     -0.02399987187139711,
+     0.0076551742187610785
+    ],
+    "ci95": [
+     -0.02784846268557144,
+     0.010125653568945982
+    ],
+    "p_two_sided_bootstrap": 0.4984,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "COMMITTEE": {
+    "cer_difference": 0.0016015279827482215,
+    "ci90": [
+     -0.024629582643375524,
+     0.02199361998745565
+    ],
+    "ci95": [
+     -0.029913499982429648,
+     0.02465277563555314
+    ],
+    "p_two_sided_bootstrap": 0.8624,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "JEV_12M": {
+    "cer_difference": -0.008125656915153844,
+    "ci90": [
+     -0.022672581891180574,
+     0.0026930457388375894
+    ],
+    "ci95": [
+     -0.02540621776034144,
+     0.004039344830554657
+    ],
+    "p_two_sided_bootstrap": 0.3048,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "COMMITTEE_12M": {
+    "cer_difference": -0.006522906180138156,
+    "ci90": [
+     -0.024313689550148686,
+     0.007337684844324683
+    ],
+    "ci95": [
+     -0.028083520853070074,
+     0.009115799466280867
+    ],
+    "p_two_sided_bootstrap": 0.5432,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   }
+  },
+  "vs_det_holm": {
+   "JEV": {
+    "p": 0.4984,
+    "holm_adjusted_p": 0.9968,
+    "reject_at_alpha": false
+   },
+   "COMMITTEE": {
+    "p": 0.8624,
+    "holm_adjusted_p": 0.9968,
+    "reject_at_alpha": false
+   }
+  }
+ },
+ "spy70_sign": {
+  "prior_spy": 0.7,
+  "mapping": "sign",
+  "metrics": {
+   "DET": {
+    "n_months": 46,
+    "net_annualized_excess_return": 0.07486768220562197,
+    "annualized_volatility": 0.15219420699969374,
+    "net_sharpe": 0.491922023062104,
+    "max_drawdown": -0.23598142253455312,
+    "cer_delta_2_5": 0.045913836400289926,
+    "mean_one_way_turnover_per_rebalance": 0.02540376801886014,
+    "annualized_one_way_turnover": 0.30484521622632166,
+    "total_cost": 0.001168573328867566,
+    "net_cer": 0.045913836400289926,
+    "mean_spy_weight": 0.6841917717345884,
+    "min_spy_weight": 0.655686445066738,
+    "max_spy_weight": 0.7079363432647674
+   },
+   "JEV": {
+    "n_months": 46,
+    "net_annualized_excess_return": 0.07521194669599725,
+    "annualized_volatility": 0.1521930659657601,
+    "net_sharpe": 0.49418773594401594,
+    "max_drawdown": -0.23590077572889068,
+    "cer_delta_2_5": 0.04625853503592449,
+    "mean_one_way_turnover_per_rebalance": 0.024660143422741067,
+    "annualized_one_way_turnover": 0.29592172107289283,
+    "total_cost": 0.001134366597446089,
+    "net_cer": 0.04625853503592449,
+    "mean_spy_weight": 0.6855360944158078,
+    "min_spy_weight": 0.655686445066738,
+    "max_spy_weight": 0.709990514513519
+   },
+   "COMMITTEE": {
+    "n_months": 46,
+    "net_annualized_excess_return": 0.07597894062589425,
+    "annualized_volatility": 0.1512652701491199,
+    "net_sharpe": 0.5022893923436154,
+    "max_drawdown": -0.24063071736577202,
+    "cer_delta_2_5": 0.04737746318428646,
+    "mean_one_way_turnover_per_rebalance": 0.037476237939031036,
+    "annualized_one_way_turnover": 0.4497148552683724,
+    "total_cost": 0.001723906945195428,
+    "net_cer": 0.04737746318428646,
+    "mean_spy_weight": 0.6959308074517235,
+    "min_spy_weight": 0.6360691324911305,
+    "max_spy_weight": 0.789610384824116
+   },
+   "JEV_12M": {
+    "n_months": 46,
+    "net_annualized_excess_return": 0.07530580471960516,
+    "annualized_volatility": 0.1522086733906626,
+    "net_sharpe": 0.49475370254573725,
+    "max_drawdown": -0.23591219662491747,
+    "cer_delta_2_5": 0.046346454400423405,
+    "mean_one_way_turnover_per_rebalance": 0.024892122419607317,
+    "annualized_one_way_turnover": 0.29870546903528783,
+    "total_cost": 0.0011450376313019363,
+    "net_cer": 0.046346454400423405,
+    "mean_spy_weight": 0.6861129603412893,
+    "min_spy_weight": 0.6544278190743276,
+    "max_spy_weight": 0.709990514513519
+   },
+   "COMMITTEE_12M": {
+    "n_months": 46,
+    "net_annualized_excess_return": 0.07541487600097725,
+    "annualized_volatility": 0.1520560728680736,
+    "net_sharpe": 0.4959675373597769,
+    "max_drawdown": -0.2358236638604616,
+    "cer_delta_2_5": 0.04651356438090111,
+    "mean_one_way_turnover_per_rebalance": 0.02541036369407041,
+    "annualized_one_way_turnover": 0.30492436432884495,
+    "total_cost": 0.0011688767299272388,
+    "net_cer": 0.04651356438090111,
+    "mean_spy_weight": 0.6898865730510773,
+    "min_spy_weight": 0.6535893152516347,
+    "max_spy_weight": 0.76385621648474
+   },
+   "PLACEBO": {
+    "n_months": 46,
+    "net_annualized_excess_return": 0.07522128967255097,
+    "annualized_volatility": 0.15219794990394378,
+    "net_sharpe": 0.4942332647714713,
+    "max_drawdown": -0.23590077572889068,
+    "cer_delta_2_5": 0.046266019728846745,
+    "mean_one_way_turnover_per_rebalance": 0.02475821848058318,
+    "annualized_one_way_turnover": 0.29709862176699814,
+    "total_cost": 0.0011388780501068263,
+    "net_cer": 0.046266019728846745,
+    "mean_spy_weight": 0.6852977394931464,
+    "min_spy_weight": 0.655686445066738,
+    "max_spy_weight": 0.709990514513519
+   },
+   "STATIC": {
+    "n_months": 46,
+    "net_annualized_excess_return": 0.08189216808572979,
+    "annualized_volatility": 0.15368662425404758,
+    "net_sharpe": 0.5328516289768986,
+    "max_drawdown": -0.2353647624392099,
+    "cer_delta_2_5": 0.05236769499247376,
+    "mean_one_way_turnover_per_rebalance": 0.023373574168251032,
+    "annualized_one_way_turnover": 0.2804828900190124,
+    "total_cost": 0.0010751844117395473,
+    "net_cer": 0.05236769499247376,
+    "mean_spy_weight": 0.7,
+    "min_spy_weight": 0.7,
+    "max_spy_weight": 0.7
+   }
+  },
+  "vs_static": {
+   "DET": {
+    "cer_difference": -0.0064538585921838365,
+    "ci90": [
+     -0.01090799274381904,
+     -0.0027734895191963154
+    ],
+    "ci95": [
+     -0.011857241923045166,
+     -0.0021311422355609465
+    ],
+    "p_two_sided_bootstrap": 0.0,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "JEV": {
+    "cer_difference": -0.006109159956549273,
+    "ci90": [
+     -0.010695931097886545,
+     -0.002284630425288693
+    ],
+    "ci95": [
+     -0.011662789360812135,
+     -0.0015894952229856866
+    ],
+    "p_two_sided_bootstrap": 0.0008,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "COMMITTEE": {
+    "cer_difference": -0.0049902318081872996,
+    "ci90": [
+     -0.010757574505499442,
+     0.000299932920374082
+    ],
+    "ci95": [
+     -0.01195628818377456,
+     0.0013585622081028071
+    ],
+    "p_two_sided_bootstrap": 0.1172,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "JEV_12M": {
+    "cer_difference": -0.006021240592050357,
+    "ci90": [
+     -0.010742600072476348,
+     -0.002115423362131048
+    ],
+    "ci95": [
+     -0.01170280384960558,
+     -0.001441877210323186
+    ],
+    "p_two_sided_bootstrap": 0.002,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "COMMITTEE_12M": {
+    "cer_difference": -0.005854130611572653,
+    "ci90": [
+     -0.010583807304511226,
+     -0.001852831941225848
+    ],
+    "ci95": [
+     -0.011653255898322666,
+     -0.0011005877166095515
+    ],
+    "p_two_sided_bootstrap": 0.0068,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "PLACEBO": {
+    "cer_difference": -0.006101675263627017,
+    "ci90": [
+     -0.010696078636935,
+     -0.002260201578966921
+    ],
+    "ci95": [
+     -0.011652326245849547,
+     -0.0015769085860480234
+    ],
+    "p_two_sided_bootstrap": 0.0012,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   }
+  },
+  "vs_static_holm": {
+   "DET": {
+    "p": 0.0,
+    "holm_adjusted_p": 0.0,
+    "reject_at_alpha": true
+   },
+   "JEV": {
+    "p": 0.0008,
+    "holm_adjusted_p": 0.0016,
+    "reject_at_alpha": true
+   },
+   "COMMITTEE": {
+    "p": 0.1172,
+    "holm_adjusted_p": 0.1172,
+    "reject_at_alpha": false
+   }
+  },
+  "vs_placebo": {
+   "DET": {
+    "cer_difference": -0.0003521833285568196,
+    "ci90": [
+     -0.0009566780625568621,
+     -2.5398001040701972e-05
+    ],
+    "ci95": [
+     -0.0009741630409201261,
+     -1.8810310441865998e-05
+    ],
+    "p_two_sided_bootstrap": 0.0044,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "JEV": {
+    "cer_difference": -7.484692922256342e-06,
+    "ci90": [
+     -6.364390365422857e-05,
+     4.726022671581315e-05
+    ],
+    "ci95": [
+     -7.561024549023569e-05,
+     5.114591304116455e-05
+    ],
+    "p_two_sided_bootstrap": 0.9248,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "COMMITTEE": {
+    "cer_difference": 0.0011114434554397173,
+    "ci90": [
+     -0.004835996208380248,
+     0.007286579725272243
+    ],
+    "ci95": [
+     -0.005922251219659158,
+     0.008516157043118157
+    ],
+    "p_two_sided_bootstrap": 0.8092,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "JEV_12M": {
+    "cer_difference": 8.043467157665962e-05,
+    "ci90": [
+     -0.0001478921446790349,
+     0.0003755929476644876
+    ],
+    "ci95": [
+     -0.0001761382675047031,
+     0.0004394216443534867
+    ],
+    "p_two_sided_bootstrap": 0.7492,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "COMMITTEE_12M": {
+    "cer_difference": 0.0002475446520543642,
+    "ci90": [
+     -0.000721048787499169,
+     0.0012315468767168133
+    ],
+    "ci95": [
+     -0.0008380460166349645,
+     0.0014413821893201216
+    ],
+    "p_two_sided_bootstrap": 0.6336,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   }
+  },
+  "vs_det": {
+   "JEV": {
+    "cer_difference": 0.00034469863563456327,
+    "ci90": [
+     2.3355323037977176e-05,
+     0.0008907919411211913
+    ],
+    "ci95": [
+     1.618301241798851e-05,
+     0.0009491893264394755
+    ],
+    "p_two_sided_bootstrap": 0.0044,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "COMMITTEE": {
+    "cer_difference": 0.001463626783996537,
+    "ci90": [
+     -0.004391784808204717,
+     0.007501092778228045
+    ],
+    "ci95": [
+     -0.005462219940970057,
+     0.00875378148530892
+    ],
+    "p_two_sided_bootstrap": 0.7364,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "JEV_12M": {
+    "cer_difference": 0.00043261800013347923,
+    "ci90": [
+     -5.231617519627987e-05,
+     0.0010289651339416147
+    ],
+    "ci95": [
+     -8.488229057541027e-05,
+     0.0011700918204169753
+    ],
+    "p_two_sided_bootstrap": 0.2168,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   },
+   "COMMITTEE_12M": {
+    "cer_difference": 0.0005997279806111838,
+    "ci90": [
+     -0.00021962961647028212,
+     0.001634398559937222
+    ],
+    "ci95": [
+     -0.000397110644466489,
+     0.0019232106755790422
+    ],
+    "p_two_sided_bootstrap": 0.2912,
+    "n_months": 46,
+    "first_month": "2019-03",
+    "last_month": "2022-12",
+    "block_months": 6,
+    "replications": 5000,
+    "seed": 20261027
+   }
+  },
+  "vs_det_holm": {
+   "JEV": {
+    "p": 0.0044,
+    "holm_adjusted_p": 0.0088,
+    "reject_at_alpha": true
+   },
+   "COMMITTEE": {
+    "p": 0.7364,
+    "holm_adjusted_p": 0.7364,
+    "reject_at_alpha": false
+   }
+  }
+ }
+}

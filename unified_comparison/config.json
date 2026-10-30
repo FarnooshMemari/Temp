@@ -1,0 +1,46 @@
+{
+  "_comment": "Unified five-approach one-month SPY/TLT experiment. Three active LLM/quant models and Static benchmark. Causal RAG requires new SPY/TLT monthly agent records; no proxy or three-asset forecasts are accepted. Common Omega comes from DET expanding past-only validation errors.",
+  "assets": [
+    "SPY",
+    "TLT"
+  ],
+  "prior_weights": {
+    "SPY": 0.6,
+    "TLT": 0.4
+  },
+  "bounds_band": 0.2,
+  "delta": 2.5,
+  "tau": 0.05,
+  "cov_window_months": 36,
+  "cost_per_dollar": 0.0005,
+  "train_start": "2015-02",
+  "development": [
+    "2019-03",
+    "2022-12"
+  ],
+  "prior_grid": [
+    0.5,
+    0.6,
+    0.7
+  ],
+  "bootstrap": {
+    "block_months": 6,
+    "reps": 5000,
+    "seed": 20261027
+  },
+  "sources": {
+    "macro_panel": "stage2 run spec dev v4 (8 macro surprises)",
+    "jev_1m": "unified_comparison/data/jev_1m.json",
+    "committee_1m": "unified_comparison/data/committee_1m.json",
+    "causal_rag_1m": "unified_comparison/data/causal_rag_spytlt_1m.jsonl"
+  },
+  "primary": [
+    "DET",
+    "JEV",
+    "COMMITTEE",
+    "CAUSAL_RAG"
+  ],
+  "covariance": "sample",
+  "_covariance_note": "sample = plain 36-month sample covariance (ddof=1). With two assets Ledoit-Wolf shrinks 40-100% toward equal variances and zero correlation, which erases the SPY-TLT negative correlation; 'ledoit_wolf' is kept as an option.",
+  "omega": "common_det_past_only"
+}
